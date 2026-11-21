@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08111D" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <title>Legacy Bowling Academy | Elevating Your Game. Defining Your Legacy.</title>
-  <meta name="description" content="Legacy Bowling Academy offers USBC-certified coaching for youth, adult, and senior bowlers at Forest Hill Lanes in Harford County, MD. Master the finer mechanics and conquer the mental game with persistence and focus." />
+  <meta name="description" content="Legacy Bowling Academy offers USBC-certified private lessons, group clinics and camps, and youth programs at Forest Hill Lanes in Harford County, MD. Book a lesson online. Youth, adult, and senior bowlers." />
   <meta property="og:title" content="Legacy Bowling Academy | Elevating Your Game. Defining Your Legacy." />
-  <meta property="og:description" content="All-ages USBC-certified bowling coaching at Forest Hill Lanes. Finer mechanics, mental game coaching, video analysis, and arsenal guidance in collaboration with Doc's Pro Shop." />
+  <meta property="og:description" content="USBC-certified private lessons, clinics, camps, and youth programs at Forest Hill Lanes. Finer mechanics, mental game coaching, and arsenal guidance with Doc's Pro Shop." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://legacybowlingacademy.com/" />
 
@@ -69,6 +71,7 @@
       scroll-behavior: smooth;
       background-color: var(--bg-base);
       color: var(--text-primary);
+      color-scheme: dark;
       font-family: var(--font-sans);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -186,6 +189,7 @@
       padding: 76px 0;
       border-bottom: 1px solid var(--border-chrome);
       position: relative;
+      scroll-margin-top: 86px;
     }
 
     @media (min-width: 768px) {
@@ -335,11 +339,11 @@
     .desktop-nav {
       display: none;
       align-items: center;
-      gap: 22px;
+      gap: 16px;
     }
 
     .desktop-nav a {
-      font-size: 0.86rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--text-secondary);
       transition: color var(--transition-fast);
@@ -434,6 +438,22 @@
       }
       .mobile-menu-btn, .mobile-drawer {
         display: none !important;
+      }
+    }
+
+    .desktop-nav .nav-wide {
+      display: none;
+    }
+
+    @media (min-width: 1240px) {
+      .desktop-nav {
+        gap: 20px;
+      }
+      .desktop-nav a {
+        font-size: 0.84rem;
+      }
+      .desktop-nav .nav-wide {
+        display: inline;
       }
     }
 
@@ -1634,6 +1654,328 @@
       gap: 10px;
     }
 
+
+    /* Programs, payment, booking form, placeholders */
+    [hidden] {
+      display: none !important;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent-cyan);
+      outline-offset: 3px;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: wait;
+      transform: none;
+      filter: none;
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .text-link {
+      color: var(--accent-cyan);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .field-hint {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .placeholder-note {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px dashed rgba(0, 212, 255, 0.45);
+      background: rgba(0, 212, 255, 0.06);
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .placeholder-note strong {
+      display: block;
+      margin-bottom: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .placeholder-note code {
+      font-family: var(--font-mono);
+      font-size: 0.84em;
+      color: var(--accent-cyan);
+    }
+
+    #endpoint-placeholder {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .coach-certs {
+      margin-top: 16px;
+    }
+
+    .coach-certs strong {
+      display: block;
+      margin-bottom: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .coach-certs ul {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .coach-certs li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+    }
+
+    .coach-certs li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+    }
+
+    .program-jumps {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
+
+    .program-jumps a {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .program-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    @media (min-width: 900px) {
+      .program-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .program-card {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      scroll-margin-top: 96px;
+    }
+
+    .program-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .program-card p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .program-card .btn {
+      margin-top: auto;
+    }
+
+    .pay-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    @media (min-width: 860px) {
+      .pay-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: start;
+      }
+    }
+
+    .pay-card {
+      padding: 26px;
+    }
+
+    .pay-title {
+      margin-top: 12px;
+      font-size: 1.28rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .pay-card p {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .rate-list {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .rate-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 6px 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-chrome);
+      font-size: 0.9rem;
+    }
+
+    .rate-row span:first-child {
+      color: var(--text-secondary);
+    }
+
+    .rate-row span:last-child {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      text-align: right;
+    }
+
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-cyan-dim);
+      border: 1px solid var(--border-cyan);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    #pay-soon .btn {
+      margin-top: 16px;
+    }
+
+    .pay-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .form-card {
+      position: relative;
+    }
+
+    .form-mode-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .form-mode-btn {
+      min-height: 46px;
+      padding: 10px 8px;
+      border-radius: var(--radius-md);
+      background: var(--bg-base);
+      border: 1px solid var(--border-chrome);
+      color: var(--text-secondary);
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .form-mode-btn.active {
+      color: var(--accent-cyan);
+      border-color: var(--accent-cyan);
+      background: var(--accent-cyan-dim);
+    }
+
+    .hp-field {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .confirm-heading {
+      margin-top: 14px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .confirm-body {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .confirmation-card.is-fallback .confirm-badge {
+      background: var(--accent-cyan-dim);
+      border-color: var(--border-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .confirmation-card.is-error .confirm-badge {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: rgba(239, 68, 68, 0.42);
+      color: #FCA5A5;
+    }
+
+    select.field-input option {
+      background: #0E1B2C;
+      color: #F1F5F9;
+    }
+
     /* =========================================================================
        9. FOOTER & TOAST NOTIFICATION
        ========================================================================= */
@@ -1876,9 +2218,11 @@
         <a href="#about">Our Philosophy</a>
         <a href="#staff">Coaching Staff</a>
         <a href="#sessions">Sessions</a>
-        <a href="#focus-check">Focus Finder</a>
-        <a href="#process">How It Works</a>
+        <a href="#programs">Programs</a>
+        <a href="#focus-check" class="nav-wide">Focus Finder</a>
+        <a href="#process" class="nav-wide">How It Works</a>
         <a href="#faq">FAQ</a>
+        <a href="#pay">Pay</a>
       </nav>
 
       <!-- Desktop Cyan Primary CTA -->
@@ -1901,17 +2245,19 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
+    <nav id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
       <div class="mobile-drawer-links">
         <a href="#about" class="drawer-link"><span><span class="nav-idx">01 //</span>Our Philosophy</span><span>&rarr;</span></a>
-        <a href="#staff" class="drawer-link"><span><span class="nav-idx">01B //</span>Coaching Staff</span><span>&rarr;</span></a>
-        <a href="#sessions" class="drawer-link"><span><span class="nav-idx">02 //</span>Sessions &amp; Pricing</span><span>&rarr;</span></a>
-        <a href="#focus-check" class="drawer-link"><span><span class="nav-idx">03 //</span>Focus Finder</span><span>&rarr;</span></a>
-        <a href="#process" class="drawer-link"><span><span class="nav-idx">04 //</span>How It Works</span><span>&rarr;</span></a>
-        <a href="#faq" class="drawer-link"><span><span class="nav-idx">05 //</span>Plain-English FAQ</span><span>&rarr;</span></a>
+        <a href="#staff" class="drawer-link"><span><span class="nav-idx">02 //</span>Coaching Staff</span><span>&rarr;</span></a>
+        <a href="#sessions" class="drawer-link"><span><span class="nav-idx">03 //</span>Sessions &amp; Pricing</span><span>&rarr;</span></a>
+        <a href="#programs" class="drawer-link"><span><span class="nav-idx">04 //</span>Clinics, Camps &amp; Youth</span><span>&rarr;</span></a>
+        <a href="#focus-check" class="drawer-link"><span><span class="nav-idx">05 //</span>Focus Finder</span><span>&rarr;</span></a>
+        <a href="#process" class="drawer-link"><span><span class="nav-idx">06 //</span>How It Works</span><span>&rarr;</span></a>
+        <a href="#faq" class="drawer-link"><span><span class="nav-idx">07 //</span>Plain-English FAQ</span><span>&rarr;</span></a>
+        <a href="#pay" class="drawer-link"><span><span class="nav-idx">08 //</span>Book &amp; Pay</span><span>&rarr;</span></a>
       </div>
       <a href="#contact" class="btn btn-primary mobile-drawer-cta drawer-link">Book a Session</a>
-    </div>
+    </nav>
   </header>
 
   <main id="top">
@@ -1945,6 +2291,7 @@
               </svg>
             </a>
             <a href="#contact" class="btn btn-secondary">Book a Session</a>
+            <a href="#programs" class="btn btn-secondary">Clinics &amp; Youth</a>
           </div>
 
           <!-- 3 Trust Badges Strip -->
@@ -2093,6 +2440,18 @@
               <p class="coach-bio">
                 On the lanes since age 4, Scott competes at a 222 average across weekly leagues and collaborates directly with Doc's Pro Shop on fit, PAP verification, and dual-angle arsenal design.
               </p>
+              <div class="coach-certs">
+                <strong>Certifications on file</strong>
+                <ul>
+                  <li>USBC Bronze Certified</li>
+                  <li>SafeSport Certified</li>
+                  <li>USBC ID 988-6768</li>
+                </ul>
+              </div>
+              <p class="placeholder-note" id="placeholder-scott-certs">
+                <strong>Placeholder &mdash; add the real details before relying on this page</strong>
+                Any other credential you want public: additional USBC levels, coaching-course names, the year coaching started, or league and youth affiliations. Nothing else is listed because it was not already on this page.
+              </p>
             </div>
             <div class="coach-focus-box">
               <strong>Coaching Focus</strong>
@@ -2113,6 +2472,10 @@
               <p class="coach-bio">
                 Focused on all-ages physical game refinement, high-percentage spare systems, and structured mental-game consistency for bowlers ready to break through scoring plateaus.
               </p>
+              <p class="placeholder-note" id="placeholder-staff-mechanics">
+                <strong>Placeholder &mdash; add the real details before relying on this page</strong>
+                This card is a role, not a person. Add the coach's name, USBC certification level, SafeSport status, and a short bio when you are ready to publish them.
+              </p>
             </div>
             <div class="coach-focus-box">
               <strong>Coaching Focus</strong>
@@ -2132,6 +2495,10 @@
               </div>
               <p class="coach-bio">
                 Dedicated to adapting mechanics for senior longevity and comfort, navigating weekly league lane transition, and building rock-solid fundamentals for next-generation bowlers.
+              </p>
+              <p class="placeholder-note" id="placeholder-staff-league">
+                <strong>Placeholder &mdash; add the real details before relying on this page</strong>
+                This card is a role, not a person. Add the coach's name, USBC certification level, SafeSport status, and a short bio when you are ready to publish them.
               </p>
             </div>
             <div class="coach-focus-box">
@@ -2163,7 +2530,7 @@
         <div class="eyebrow">02 // WHAT EACH SESSION TAKES</div>
         <h2 class="section-heading">Clear Scope. Honest Pricing. Zero Fluff.</h2>
         <p class="section-lead">
-          Select a coaching focus below to see realistic session lengths, transparent rates, and how we make sure every minute on the lanes at Forest Hill Lanes counts.
+          Select a coaching focus below to see realistic session lengths, transparent rates, and how we make sure every minute on the lanes at Forest Hill Lanes counts. These tabs are private lessons. Clinics, camps, and youth programs are the next section, and only with dates and prices that are actually set.
         </p>
 
         <!-- 4-Tab Selector -->
@@ -2194,11 +2561,69 @@
     </section>
 
     <!-- ======================================================================
-         5. SECTION 03 // INTERACTIVE FOCUS FINDER (#focus-check)
+         PROGRAMS // PRIVATE LESSONS, CLINICS, CAMPS, YOUTH (#programs)
          ====================================================================== -->
-    <section id="focus-check" class="section section-alt">
+    <section id="programs" class="section section-alt">
       <div class="container">
-        <div class="eyebrow">03 // INTERACTIVE FOCUS FINDER</div>
+        <div class="eyebrow">03 // CLINICS, CAMPS &amp; YOUTH</div>
+        <h2 class="section-heading">Private Lessons, Group Clinics, and Youth Programs</h2>
+        <p class="section-lead">
+          One bowler at a time is the core of the academy. When a clinic, camp, or youth program is actually on the calendar, we work that same plain-English lesson with a small group at Forest Hill Lanes. Dates and prices show up here only after they are real.
+        </p>
+        <div class="program-jumps">
+          <a href="#private-lessons">Private lessons</a>
+          <a href="#clinics">Clinics &amp; camps</a>
+          <a href="#youth">Youth programs</a>
+        </div>
+
+        <div class="program-grid">
+          <article id="private-lessons" class="card program-card">
+            <div class="eyebrow">PRIVATE LESSONS</div>
+            <h3>One bowler. One coach. The lanes.</h3>
+            <p>
+              We watch your natural game first, then lock in the one or two changes that matter. Youth, adult, and senior bowlers use the same private-lesson menu. No giant bundle, and no overnight gimmick.
+            </p>
+            <p>
+              Published rates, plus lane lineage paid at the center: $60 a session for finer mechanics, the mental game, and arsenal consults. $75 a session for video and biomechanical breakdown. <a class="text-link" href="#sessions">See what each session includes.</a>
+            </p>
+            <button type="button" class="btn btn-primary" data-book-program="private lesson">Book a private lesson</button>
+          </article>
+
+          <article id="clinics" class="card program-card">
+            <div class="eyebrow">GROUP CLINICS &amp; CAMPS</div>
+            <h3>Same lesson. More than one bowler.</h3>
+            <p>
+              Clinics and camps are shared blocks of time on the lanes at Forest Hill Lanes: one focus, a small group, a coach who will tell you what to leave alone. A clinic is not listed here until the date, time, and price are real.
+            </p>
+            <p class="placeholder-note" id="placeholder-clinics">
+              <strong>Placeholder &mdash; add the real details before relying on this page</strong>
+              Next clinic or camp: name, date, start and end time, ages, group size, and price. No date or price is shown until you replace this note.
+            </p>
+            <button type="button" class="btn btn-primary" data-book-program="clinic-camp">Request a clinic or camp</button>
+          </article>
+
+          <article id="youth" class="card program-card">
+            <div class="eyebrow">YOUTH PROGRAMS</div>
+            <h3>Fundamentals for bowlers still growing into the game.</h3>
+            <p>
+              Youth and high school bowlers already belong in private lessons. A youth program is the group version: sound fundamentals, spare systems, and the mental game, with USBC-certified, SafeSport-vetted coaches. Ages, a season, and a price stay off this page until they are set.
+            </p>
+            <p class="placeholder-note" id="placeholder-youth">
+              <strong>Placeholder &mdash; add the real details before relying on this page</strong>
+              Age range, season dates, meeting day and time, group size, and price. The $60 and $75 private-lesson rates are not a youth-program price.
+            </p>
+            <button type="button" class="btn btn-primary" data-book-program="youth program">Request the youth program</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. SECTION 04 // INTERACTIVE FOCUS FINDER (#focus-check)
+         ====================================================================== -->
+    <section id="focus-check" class="section">
+      <div class="container">
+        <div class="eyebrow">04 // INTERACTIVE FOCUS FINDER</div>
         <h2 class="section-heading">Find Your Starting Point</h2>
         <p class="section-lead">
           Not sure which session fits best? Pick your bowler profile and primary goal to get a tailored path built around steady persistence and focus.
@@ -2280,9 +2705,9 @@
     <!-- ======================================================================
          6. SECTION 04 // HOW IT WORKS (#process)
          ====================================================================== -->
-    <section id="process" class="section">
+    <section id="process" class="section section-alt">
       <div class="container">
-        <div class="eyebrow">04 // HOW IT WORKS</div>
+        <div class="eyebrow">05 // HOW IT WORKS</div>
         <h2 class="section-heading">Simple Process. Lasting Results.</h2>
         <p class="section-lead">
           Whether you want a full mechanical breakdown or just have a few questions about your game, getting started is straightforward.
@@ -2293,7 +2718,7 @@
             <div class="process-step-tag">01 // ASK OR BOOK</div>
             <h3>Start With Your Questions</h3>
             <p>
-              Fill out the short inquiry form below with your age group, goals, or specific questions. We match you with the right coach on our USBC-certified team and confirm a convenient lane time at Forest Hill Lanes.
+              Fill out the booking form below with your age group, program, and the times that work. We match you with the right coach on our USBC-certified team and confirm a lane time at Forest Hill Lanes.
             </p>
           </div>
 
@@ -2319,9 +2744,9 @@
     <!-- ======================================================================
          7. SECTION 05 // PLAIN-ENGLISH FAQ (#faq)
          ====================================================================== -->
-    <section id="faq" class="section section-alt">
+    <section id="faq" class="section">
       <div class="container">
-        <div class="eyebrow">05 // PLAIN-ENGLISH FAQ</div>
+        <div class="eyebrow">06 // PLAIN-ENGLISH FAQ</div>
         <h2 class="section-heading">Straight Answers Before You Step on the Approach</h2>
         <p class="section-lead">
           Honest answers to the questions we hear most from youth, adult, and senior bowlers across Harford County.
@@ -2392,23 +2817,122 @@
               Lane lineage is paid separately directly to the front desk at <strong>Forest Hill Lanes</strong> at their standard practice, league-bowler, senior, or youth rate. Keeping lineage separate keeps our coaching pricing completely transparent and lets you take advantage of any discounts you already earn at the center.
             </div>
           </div>
+          <!-- FAQ: clinics, camps, youth -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>Do you offer group clinics, camps, or a youth program?</span>
+              <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              Yes. Private lessons are one bowler at a time, and those rates are in the Sessions section. Group clinics, camps, and youth programs happen at Forest Hill Lanes when they are on the calendar. The Programs section is where a date and a price will be posted. Until a date is listed, use the booking form, choose Clinic or camp or Youth program, and we will reply with what is actually open. Nothing on this page is a confirmed clinic date.
+            </div>
+          </div>
+
+          <!-- FAQ: booking and payment -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>Can I book and pay online?</span>
+              <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              You can request a time with the booking form. If the academy desk is connected, that request is handed off from this page. If it is not connected yet, the form does not pretend it sent &mdash; it prepares an email you send yourself. Coaching payments are processed by Legacy Computing Services, LLC. The academy is a DBA of that company and does not have its own merchant account. The Pay section uses the company's payment link once it is connected. Until then it says payment is coming soon, and a booking request does not charge a card. Lane lineage is still paid at the Forest Hill Lanes front desk.
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         8. SECTION 06 // START A CONVERSATION (#contact)
+         7. SECTION 07 // BOOK & PAY (#pay)
+         ====================================================================== -->
+    <section id="pay" class="section section-alt">
+      <div class="container">
+        <div class="eyebrow">07 // BOOK &amp; PAY</div>
+        <h2 class="section-heading">Book the Time. Pay When the Link Is Live.</h2>
+        <p class="section-lead">
+          Private-lesson prices are the ones already published in Sessions. This page never takes a card number. All coaching payments are processed by Legacy Computing Services, LLC. Legacy Bowling Academy is a DBA of that company and does not have its own merchant account. When the Legacy Computing Services payment link is connected, the button sends you there. Until then, online payment is coming soon, and a booking request does not charge you. Lane lineage is still paid at the Forest Hill Lanes front desk.
+        </p>
+
+        <div class="pay-grid">
+          <div class="card pay-card">
+            <div class="eyebrow">PUBLISHED PRIVATE-LESSON RATES</div>
+            <div class="rate-list">
+              <div class="rate-row">
+                <span>Finer mechanics &amp; 1-on-1</span>
+                <span>$60 / session</span>
+              </div>
+              <div class="rate-row">
+                <span>Mental game &amp; lane play</span>
+                <span>$60 / session</span>
+              </div>
+              <div class="rate-row">
+                <span>Arsenal &amp; layout consult</span>
+                <span>$60 / session</span>
+              </div>
+              <div class="rate-row">
+                <span>Video &amp; biomechanical breakdown</span>
+                <span>$75 / session</span>
+              </div>
+              <div class="rate-row">
+                <span>Lane lineage</span>
+                <span>Paid at Forest Hill Lanes</span>
+              </div>
+            </div>
+            <p class="field-hint">
+              Each rate is plus lineage at the center, same as the Sessions section. <a class="text-link" href="#sessions">See what each session includes.</a>
+            </p>
+            <p class="placeholder-note" id="placeholder-program-prices">
+              <strong>Placeholder &mdash; add the real details before relying on this page</strong>
+              Clinic, camp, and youth-program prices. They are not listed because they were not already on this site. Delete this note when you publish those prices.
+            </p>
+          </div>
+
+          <div class="card pay-card">
+            <div id="pay-soon">
+              <div class="coming-soon-badge">Online payment coming soon</div>
+              <h3 class="pay-title">Nothing to charge on this page yet</h3>
+              <p>
+                The Legacy Computing Services payment link is not connected yet, so this site will not send you to a checkout and will not pretend a payment went through. Book a time first. We will confirm how to pay by email. When that link is live, the charge is processed by Legacy Computing Services, LLC.
+              </p>
+              <p class="placeholder-note" id="pay-link-placeholder">
+                <strong>Placeholder &mdash; add the real details before relying on this page</strong>
+                Payment link. Paste the Legacy Computing Services, LLC payment URL into <code>PAYMENT_LINK</code> at the top of the script in index.html. Do not point this at a separate academy merchant account. This block hides once that URL is a real https link. See <a class="text-link" href="docs/editing.md">docs/editing.md</a>.
+              </p>
+              <a href="#contact" class="btn btn-primary">Book a session</a>
+            </div>
+            <div id="pay-live" hidden>
+              <div class="eyebrow">PROCESSED BY LEGACY COMPUTING SERVICES, LLC</div>
+              <h3 class="pay-title">Pay through Legacy Computing Services</h3>
+              <p>
+                You leave this website and pay on the Legacy Computing Services, LLC page. The academy does not have its own merchant account. This site does not see or store your card. A booking request still does not charge you by itself.
+              </p>
+              <div class="pay-actions">
+                <a id="pay-link" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Pay via Legacy Computing Services</a>
+                <a href="#contact" class="btn btn-secondary">Book first</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. SECTION 08 // START A CONVERSATION (#contact)
          ====================================================================== -->
     <section id="contact" class="section">
       <div class="container">
-        <div class="eyebrow">06 // START A CONVERSATION</div>
+        <div class="eyebrow">08 // START A CONVERSATION</div>
         <h2 class="section-heading">Ready to Elevate Your Game?</h2>
 
         <div class="contact-grid">
           <!-- Left Column: Location & Contact Info -->
           <div>
             <p class="section-lead" style="margin-top:8px;">
-              Book a 1-on-1 session, ask a question about your game, or inquire about joining our coaching roster. We reply within one business day to match you with the right coach and confirm a lane time.
+              Book a private lesson, clinic, camp, or youth program, or send a question. If the academy desk is connected, the form hands your request over. If it is not, we do not pretend it sent &mdash; you get an email you can send yourself. We reply within one business day.
             </p>
 
             <div class="info-stack">
@@ -2425,6 +2949,12 @@
               </div>
 
               <div class="info-tile">
+                <div class="info-tile-label">Online payment</div>
+                <div class="info-tile-main"><a class="text-link" href="#pay">Pay section</a></div>
+                <div class="info-tile-sub">Processed by Legacy Computing Services, LLC. The academy does not have its own merchant account. Lane lineage is still paid at Forest Hill Lanes.</div>
+              </div>
+
+              <div class="info-tile">
                 <div class="info-tile-label">Equipment &amp; Pro Shop Synergy</div>
                 <div class="info-tile-main">Partnered with Doc's Pro Shop</div>
                 <div class="info-tile-sub">Seamless alignment between your coaching notes, PAP specs, surface prep, and ball fit</div>
@@ -2434,91 +2964,123 @@
 
           <!-- Right Column: Validated Booking & Inquiry Form -->
           <div class="card form-card">
-            <form id="booking-form" novalidate>
+            <form id="booking-form" method="post" action="#contact" novalidate>
+              <p class="placeholder-note" id="endpoint-placeholder">
+                <strong>Placeholder &mdash; add the real details before relying on this page</strong>
+                Booking endpoint. Paste the academy desk URL into <code>ACADEMY_ENDPOINT</code> at the top of the script in index.html. Until then, this form prepares an email and does not submit. See <a class="text-link" href="docs/editing.md">docs/editing.md</a>.
+              </p>
+
+              <div class="form-mode-bar" role="tablist" aria-label="Booking or inquiry">
+                <button type="button" class="form-mode-btn active" id="mode-booking" role="tab" aria-selected="true" aria-controls="booking-form">Book a lesson</button>
+                <button type="button" class="form-mode-btn" id="mode-inquiry" role="tab" aria-selected="false" aria-controls="booking-form">Send an inquiry</button>
+              </div>
+
               <div class="form-grid">
                 <div class="form-row-2">
                   <div class="field-group">
-                    <label for="full-name">Full Name *</label>
-                    <input type="text" id="full-name" name="fullName" class="field-input" placeholder="e.g., Jordan Taylor" required />
+                    <label for="full-name">Full name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="full-name" name="name" class="field-input" autocomplete="name" maxlength="120" placeholder="Your name" required />
                   </div>
                   <div class="field-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" class="field-input" placeholder="you@example.com" required />
+                    <label for="email">Email address <span aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" class="field-input" autocomplete="email" inputmode="email" maxlength="160" placeholder="you@example.com" required />
                   </div>
                 </div>
 
                 <div class="form-row-2">
                   <div class="field-group">
-                    <label for="age-group">Bowler Age Group *</label>
-                    <select id="age-group" name="ageGroup" class="field-input">
-                      <option value="Adult Bowler">Adult Bowler</option>
-                      <option value="Youth / High School">Youth / High School</option>
-                      <option value="Senior Bowler">Senior Bowler</option>
-                      <option value="Coach Inquiry">Coach Inquiry</option>
-                    </select>
+                    <label for="phone">Phone <span class="req-mark" id="phone-req" aria-hidden="true">*</span></label>
+                    <input type="tel" id="phone" name="phone" class="field-input" autocomplete="tel" inputmode="tel" maxlength="40" placeholder="Phone number" />
                   </div>
-
                   <div class="field-group">
-                    <label for="preferred-coach">Preferred Coach</label>
-                    <select id="preferred-coach" name="preferredCoach" class="field-input">
-                      <option value="Best Match / First Available Coach" selected>Best Match / First Available Coach</option>
-                      <option value="Scott J. Kramer (Founder & Lead Coach)">Scott J. Kramer (Founder &amp; Lead Coach)</option>
-                      <option value="Academy Coaching Staff">Academy Coaching Staff</option>
+                    <label for="age-group">Bowler age group <span aria-hidden="true">*</span></label>
+                    <select id="age-group" name="ageGroup" class="field-input" required>
+                      <option value="youth">Youth</option>
+                      <option value="adult" selected>Adult</option>
+                      <option value="senior">Senior</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="field-group">
-                  <label for="session-focus">Session Focus *</label>
+                <div class="form-row-2">
+                  <div class="field-group">
+                    <label for="program">Program <span class="req-mark" id="program-req" aria-hidden="true">*</span></label>
+                    <select id="program" name="program" class="field-input">
+                      <option value="">Select a program</option>
+                      <option value="private lesson">Private lesson</option>
+                      <option value="clinic-camp">Clinic or camp</option>
+                      <option value="youth program">Youth program</option>
+                    </select>
+                  </div>
+                  <div class="field-group">
+                    <label for="preferred-coach">Preferred coach</label>
+                    <select id="preferred-coach" name="preferredCoach" class="field-input">
+                      <option value="Best Match / First Available Coach" selected>Best match / first available</option>
+                      <option value="Scott J. Kramer (Founder &amp; Lead Coach)">Scott J. Kramer</option>
+                      <option value="Academy Coaching Staff">Academy coaching staff</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field-group" id="session-focus-group" hidden>
+                  <label for="session-focus">Private-lesson focus</label>
                   <select id="session-focus" name="sessionFocus" class="field-input">
-                    <option value="Finer Mechanics & 1-on-1 Coaching">Finer Mechanics &amp; 1-on-1 Coaching</option>
-                    <option value="Mental Game & Lane Play">Mental Game &amp; Lane Play</option>
-                    <option value="Video & Biomechanical Breakdown">Video &amp; Biomechanical Breakdown</option>
-                    <option value="Arsenal & Layout Consult">Arsenal &amp; Layout Consult</option>
+                    <option value="Finer Mechanics &amp; 1-on-1 Coaching">Finer Mechanics &amp; 1-on-1 Coaching</option>
+                    <option value="Mental Game &amp; Lane Play">Mental Game &amp; Lane Play</option>
+                    <option value="Video &amp; Biomechanical Breakdown">Video &amp; Biomechanical Breakdown</option>
+                    <option value="Arsenal &amp; Layout Consult">Arsenal &amp; Layout Consult</option>
                     <option value="General Questions / Getting Started">General Questions / Getting Started</option>
-                    <option value="Coaching Staff Inquiry">Coaching Staff Inquiry</option>
                   </select>
                 </div>
 
                 <div class="field-group">
-                  <label for="message-notes">Message, Goals &amp; Availability *</label>
-                  <textarea id="message-notes" name="messageNotes" class="field-input" placeholder="Share your approximate average (if you have one), what you'd like to work on or ask about, and days/times that work best at Forest Hill Lanes..." required></textarea>
+                  <label for="preferred-times">Preferred days and times <span class="req-mark" id="times-req" aria-hidden="true">*</span></label>
+                  <input type="text" id="preferred-times" name="preferredTimes" class="field-input" maxlength="300" placeholder="Weekday evenings or Saturday morning at Forest Hill Lanes" />
                 </div>
 
-                <div id="form-error" class="form-error-msg" role="alert">
-                  Please enter your name, a valid email address, and a short message about your goals or questions.
+                <div class="field-group">
+                  <label for="goals">Goals</label>
+                  <textarea id="goals" name="goals" class="field-input" maxlength="2000" placeholder="What you want to work on: spares, the mental game, fundamentals, a clinic topic."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="width:100%;">
-                  <span>Send Coaching Inquiry</span>
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-                  </svg>
+                <div class="field-group">
+                  <label for="message-notes">Message <span class="req-mark" id="message-req" aria-hidden="true" hidden>*</span></label>
+                  <textarea id="message-notes" name="message" class="field-input" maxlength="2000" placeholder="Anything else we should know. Questions are welcome."></textarea>
+                </div>
+
+                <div class="hp-field" aria-hidden="true">
+                  <label for="website">Website</label>
+                  <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" maxlength="200" value="" />
+                </div>
+
+                <div id="form-error" class="form-error-msg" role="alert"></div>
+                <p id="form-transport-note" class="field-hint"></p>
+
+                <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn" aria-describedby="form-transport-note">
+                  <span>Prepare booking email</span>
+                  <span aria-hidden="true">&rarr;</span>
                 </button>
               </div>
             </form>
 
-            <!-- Inline Confirmation Card -->
+            <noscript>
+              <p class="field-hint">This form needs JavaScript to prepare a request. Email info@legacybowlingacademy.com with your name, program, and the times that work.</p>
+            </noscript>
+
             <div id="confirmation-card" class="confirmation-card" aria-live="polite">
               <div class="confirm-badge">
                 <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
                 </svg>
-                Inquiry Summary Ready
+                <span id="confirm-badge-text">Not sent</span>
               </div>
-              <h3 style="margin-top:14px; font-size:1.3rem; font-weight:800; color:var(--text-primary);">
-                Thanks! Your message is formatted and ready to send.
-              </h3>
-              <p style="margin-top:6px; font-size:0.9rem; color:var(--text-secondary);">
-                Launch your email app to send directly to our coaching desk, or copy the formatted summary below.
-              </p>
-
+              <h3 id="confirm-heading" class="confirm-heading" tabindex="-1">Online booking is not connected yet</h3>
+              <p id="confirm-body" class="confirm-body"></p>
               <pre id="confirm-summary-pre" class="confirm-summary-pre"></pre>
-
               <div class="confirm-actions">
                 <a id="mailto-launch-btn" href="#" class="btn btn-primary">Open in Email App</a>
                 <button type="button" id="copy-summary-btn" class="btn btn-secondary">Copy Summary</button>
-                <button type="button" id="reset-form-btn" class="btn btn-ghost-cyan">New Inquiry</button>
+                <button type="button" id="reset-form-btn" class="btn btn-ghost-cyan">Start over</button>
               </div>
             </div>
           </div>
@@ -2552,15 +3114,20 @@
           <a href="#about">Our Philosophy</a>
           <a href="#staff">Coaching Staff</a>
           <a href="#sessions">Sessions</a>
+          <a href="#programs">Programs</a>
           <a href="#focus-check">Focus Finder</a>
           <a href="#process">How It Works</a>
           <a href="#faq">FAQ</a>
+          <a href="#pay">Pay</a>
           <a href="#contact">Book a Session</a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>A trade name of Legacy Computing Services LLC &middot; Forest Hill Lanes, Harford County, MD</div>
+        <div>
+          <div>Legacy Bowling Academy is a DBA of Legacy Computing Services, LLC</div>
+          <div>Forest Hill Lanes, Harford County, MD</div>
+        </div>
         <div>&copy; <span id="footer-year"></span> Legacy Computing Services LLC. All rights reserved.</div>
       </div>
     </div>
@@ -2583,6 +3150,22 @@
   <script>
     (function () {
       'use strict';
+
+      /* ====================================================================
+         ACADEMY DESK CONFIG
+         Paste URLs here. Leave blank until they exist. See docs/editing.md.
+         PAYMENT_LINK is a Legacy Computing Services, LLC payment URL.
+         The academy has no separate merchant account.
+         Keep secrets and customer data out of this file.
+         ==================================================================== */
+      const ACADEMY_ENDPOINT = '';
+      const PAYMENT_LINK = '';
+
+      function configuredHttpsUrl(value) {
+        const url = String(value || '').trim();
+        if (!/^https:\/\/\S+$/i.test(url)) return '';
+        return url;
+      }
 
       // Dynamic copyright year
       const yearEl = document.getElementById('footer-year');
@@ -2890,8 +3473,11 @@
         if (bookBtn) {
           bookBtn.addEventListener('click', () => {
             prefillBookingForm({
+              form: 'booking',
+              program: 'private lesson',
               sessionFocus: data.formValue,
-              preferredCoach: 'Best Match / First Available Coach'
+              preferredCoach: 'Best Match / First Available Coach',
+              goals: data.formValue
             });
             showToast('Session Selected', `Form pre-set to "${data.formValue}".`);
           });
@@ -2918,10 +3504,10 @@
       };
 
       const profileToAgeGroup = {
-        youth: 'Youth / High School',
-        adult: 'Adult Bowler',
-        senior: 'Senior Bowler',
-        questions: 'Adult Bowler'
+        youth: 'youth',
+        adult: 'adult',
+        senior: 'senior',
+        questions: 'adult'
       };
 
       const goalLabels = {
@@ -3030,19 +3616,21 @@
       if (prefillFocusBtn) {
         prefillFocusBtn.addEventListener('click', () => {
           if (!currentRec) return;
-          const noteText = `Focus Finder Selection:\n- Bowler Profile: ${profileLabels[selectedProfile]}\n- Primary Goal: ${goalLabels[selectedGoal]}\n- Suggested Path: ${currentRec.title}\n\nPreferred days/times at Forest Hill Lanes: `;
+          const noteText = `Focus Finder:\n- Profile: ${profileLabels[selectedProfile]}\n- Goal: ${goalLabels[selectedGoal]}\n- Suggested path: ${currentRec.title}`;
           prefillBookingForm({
+            form: 'booking',
             ageGroup: profileToAgeGroup[selectedProfile],
+            program: 'private lesson',
             sessionFocus: currentRec.sessionLabel,
             preferredCoach: 'Best Match / First Available Coach',
-            message: noteText
+            goals: noteText
           });
           showToast('Booking Pre-Filled', `Added your "${currentRec.sessionLabel}" focus details below.`);
         });
       }
 
       /* ----------------------------------------------------------------------
-         5. FORM PREFILL HELPER & APPLY TO COACH BUTTON
+         5. FORM PREFILL, PROGRAM SHORTCUTS, PAYMENT LINK
          ---------------------------------------------------------------------- */
       const bookingForm = document.getElementById('booking-form');
       const confirmationCard = document.getElementById('confirmation-card');
@@ -3050,39 +3638,160 @@
       const coachSelect = document.getElementById('preferred-coach');
       const sessionFocusSelect = document.getElementById('session-focus');
       const messageTextarea = document.getElementById('message-notes');
+      const programSelect = document.getElementById('program');
+      const goalsInput = document.getElementById('goals');
+      const timesInput = document.getElementById('preferred-times');
+      const phoneInput = document.getElementById('phone');
+      const submitBtn = document.getElementById('form-submit-btn');
+      const formErrorEl = document.getElementById('form-error');
+      let currentMode = 'booking';
+
+      function refreshSubmitLabel() {
+        if (!submitBtn) return;
+        const label = submitBtn.querySelector('span');
+        const note = document.getElementById('form-transport-note');
+        const endpointReady = configuredHttpsUrl(ACADEMY_ENDPOINT) !== '';
+        if (!label || !note) return;
+        if (!endpointReady) {
+          label.textContent = currentMode === 'booking' ? 'Prepare booking email' : 'Prepare inquiry email';
+          note.textContent = 'Online booking is coming soon. This button does not send anything. It prepares an email to info@legacybowlingacademy.com.';
+        } else if (currentMode === 'booking') {
+          label.textContent = 'Send booking request';
+          note.textContent = 'This hands your booking to the academy desk. It is not stored on this website, and it does not charge a card. Payments are processed by Legacy Computing Services, LLC.';
+        } else {
+          label.textContent = 'Send inquiry';
+          note.textContent = 'This hands your inquiry to the academy desk. It is not stored on this website.';
+        }
+      }
+
+      function setFormMode(kind) {
+        currentMode = kind === 'inquiry' ? 'inquiry' : 'booking';
+        const bookingTab = document.getElementById('mode-booking');
+        const inquiryTab = document.getElementById('mode-inquiry');
+        const isBooking = currentMode === 'booking';
+        if (bookingTab && inquiryTab) {
+          bookingTab.classList.toggle('active', isBooking);
+          inquiryTab.classList.toggle('active', !isBooking);
+          bookingTab.setAttribute('aria-selected', String(isBooking));
+          inquiryTab.setAttribute('aria-selected', String(!isBooking));
+        }
+        if (phoneInput) phoneInput.required = isBooking;
+        if (timesInput) timesInput.required = isBooking;
+        if (programSelect) programSelect.required = isBooking;
+        if (messageTextarea) messageTextarea.required = !isBooking;
+        const phoneReq = document.getElementById('phone-req');
+        const programReq = document.getElementById('program-req');
+        const timesReq = document.getElementById('times-req');
+        const messageReq = document.getElementById('message-req');
+        if (phoneReq) phoneReq.hidden = !isBooking;
+        if (programReq) programReq.hidden = !isBooking;
+        if (timesReq) timesReq.hidden = !isBooking;
+        if (messageReq) messageReq.hidden = isBooking;
+        refreshSubmitLabel();
+      }
+
+      function syncSessionFocusVisibility() {
+        const group = document.getElementById('session-focus-group');
+        if (!group || !programSelect) return;
+        group.hidden = programSelect.value !== 'private lesson';
+      }
+
+      function clearInvalid() {
+        if (bookingForm) {
+          bookingForm.querySelectorAll('[aria-invalid]').forEach((el) => el.removeAttribute('aria-invalid'));
+        }
+        if (formErrorEl) formErrorEl.classList.remove('visible');
+      }
+
+      function showForm() {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          refreshSubmitLabel();
+        }
+        if (bookingForm) bookingForm.style.display = 'block';
+        if (confirmationCard) confirmationCard.classList.remove('visible');
+        clearInvalid();
+      }
 
       function prefillBookingForm(opts) {
-        if (bookingForm && confirmationCard) {
-          bookingForm.style.display = 'block';
-          confirmationCard.classList.remove('visible');
-        }
+        if (opts.form) setFormMode(opts.form);
+        showForm();
         if (opts.ageGroup && ageGroupSelect) ageGroupSelect.value = opts.ageGroup;
+        if (Object.prototype.hasOwnProperty.call(opts, 'program') && programSelect) {
+          programSelect.value = opts.program;
+        }
         if (opts.preferredCoach && coachSelect) coachSelect.value = opts.preferredCoach;
         if (opts.sessionFocus && sessionFocusSelect) sessionFocusSelect.value = opts.sessionFocus;
+        if (typeof opts.goals === 'string' && goalsInput) goalsInput.value = opts.goals;
+        if (typeof opts.preferredTimes === 'string' && timesInput) timesInput.value = opts.preferredTimes;
         if (typeof opts.message === 'string' && messageTextarea) messageTextarea.value = opts.message;
-
+        syncSessionFocusVisibility();
         const contactSection = document.getElementById('contact');
-        if (contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
         setTimeout(() => {
           const nameInput = document.getElementById('full-name');
           if (nameInput) nameInput.focus({ preventScroll: true });
         }, 420);
       }
 
+      function applyDeskConfig() {
+        const endpoint = configuredHttpsUrl(ACADEMY_ENDPOINT);
+        const payment = configuredHttpsUrl(PAYMENT_LINK);
+        const endpointNote = document.getElementById('endpoint-placeholder');
+        if (endpointNote) endpointNote.hidden = endpoint !== '';
+
+        const paySoon = document.getElementById('pay-soon');
+        const payLive = document.getElementById('pay-live');
+        const payLink = document.getElementById('pay-link');
+        if (payment && payLink && payLive && paySoon) {
+          payLink.href = payment;
+          payLive.hidden = false;
+          paySoon.hidden = true;
+        } else {
+          if (payLive) payLive.hidden = true;
+          if (paySoon) paySoon.hidden = false;
+        }
+        refreshSubmitLabel();
+      }
+
       const applyCoachBtn = document.getElementById('apply-to-coach-btn');
       if (applyCoachBtn) {
         applyCoachBtn.addEventListener('click', () => {
           prefillBookingForm({
-            ageGroup: 'Coach Inquiry',
+            form: 'inquiry',
+            ageGroup: 'adult',
+            program: '',
             preferredCoach: 'Scott J. Kramer (Founder & Lead Coach)',
-            sessionFocus: 'Coaching Staff Inquiry',
-            message: 'Coaching Staff Inquiry:\n- USBC Certification Level: \n- SafeSport Status: \n- Specialties / Experience (Youth, Adult, Senior, Mental Game, Video): '
+            goals: 'Coaching staff inquiry',
+            message: 'Coaching staff inquiry:\n- USBC certification level:\n- SafeSport status:\n- Specialties (youth, adult, senior, mental game, video):\n'
           });
-          showToast('Coaching Inquiry Ready', 'Form set to "Coaching Staff Inquiry".');
+          showToast('Coaching inquiry ready', 'The form is set to a staff inquiry. Add your certification details.');
         });
       }
+
+      document.querySelectorAll('[data-book-program]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const program = btn.getAttribute('data-book-program') || '';
+          const opts = { form: 'booking', program: program };
+          if (goalsInput && !goalsInput.value.trim()) {
+            if (program === 'clinic-camp') opts.goals = 'Clinic or camp request';
+            if (program === 'youth program') opts.goals = 'Youth program request';
+          }
+          prefillBookingForm(opts);
+          showToast('Booking started', 'Add your name, age group, and the times that work.');
+        });
+      });
+
+      if (programSelect) {
+        programSelect.addEventListener('change', syncSessionFocusVisibility);
+      }
+
+      document.getElementById('mode-booking')?.addEventListener('click', () => setFormMode('booking'));
+      document.getElementById('mode-inquiry')?.addEventListener('click', () => setFormMode('inquiry'));
+
+      setFormMode('booking');
+      syncSessionFocusVisibility();
+      applyDeskConfig();
 
       /* ----------------------------------------------------------------------
          6. SECTION 05 // PLAIN-ENGLISH FAQ ACCORDION
@@ -3104,87 +3813,278 @@
       });
 
       /* ----------------------------------------------------------------------
-         7. SECTION 06 // VALIDATED FORM, CONFIRMATION, MAILTO & CLIPBOARD COPY
+         7. BOOKING + INQUIRY SUBMIT
+         Form-encoded POST, mode no-cors, so a Google Apps Script web app can
+         accept it. The browser cannot read that reply. A blank endpoint
+         prepares a mailto instead of pretending the request was sent.
          ---------------------------------------------------------------------- */
-      const formErrorEl = document.getElementById('form-error');
       const confirmSummaryPre = document.getElementById('confirm-summary-pre');
       const mailtoLaunchBtn = document.getElementById('mailto-launch-btn');
       const copySummaryBtn = document.getElementById('copy-summary-btn');
       const resetFormBtn = document.getElementById('reset-form-btn');
+      const confirmBadgeText = document.getElementById('confirm-badge-text');
+      const confirmHeading = document.getElementById('confirm-heading');
+      const confirmBody = document.getElementById('confirm-body');
+
+      const PAYLOAD_KEYS = [
+        'form',
+        'name',
+        'email',
+        'phone',
+        'ageGroup',
+        'program',
+        'preferredTimes',
+        'goals',
+        'message',
+        'source',
+        'website',
+        'preferredCoach'
+      ];
+
+      function buildPayload() {
+        const program = programSelect ? programSelect.value : '';
+        let goals = goalsInput ? goalsInput.value.trim() : '';
+        const sessionFocus = sessionFocusSelect ? sessionFocusSelect.value.trim() : '';
+        if (program === 'private lesson' && sessionFocus && !goals.includes(sessionFocus)) {
+          goals = goals ? `Session focus: ${sessionFocus}\n${goals}` : sessionFocus;
+        }
+        return {
+          form: currentMode === 'inquiry' ? 'inquiry' : 'booking',
+          name: (document.getElementById('full-name').value || '').trim(),
+          email: (document.getElementById('email').value || '').trim(),
+          phone: phoneInput ? phoneInput.value.trim() : '',
+          ageGroup: ageGroupSelect ? ageGroupSelect.value : '',
+          program: program,
+          preferredTimes: timesInput ? timesInput.value.trim() : '',
+          goals: goals,
+          message: messageTextarea ? messageTextarea.value.trim() : '',
+          source: 'legacy-bowling-academy',
+          website: (document.getElementById('website').value || '').trim(),
+          preferredCoach: coachSelect ? coachSelect.value : ''
+        };
+      }
+
+      function summaryFor(payload, state) {
+        const kind = payload.form === 'inquiry' ? 'INQUIRY' : 'BOOKING REQUEST';
+        const intro = state === 'success'
+          ? 'Copy of what this browser handed to the academy desk. This page cannot show a receipt.'
+          : 'Prepared by the website. Not sent until you email it.';
+        return [
+          `LEGACY BOWLING ACADEMY — ${kind}`,
+          intro,
+          '',
+          `form: ${payload.form}`,
+          `name: ${payload.name}`,
+          `email: ${payload.email}`,
+          `phone: ${payload.phone}`,
+          `ageGroup: ${payload.ageGroup}`,
+          `program: ${payload.program}`,
+          `preferredTimes: ${payload.preferredTimes}`,
+          `goals: ${payload.goals}`,
+          `message: ${payload.message}`,
+          `preferredCoach: ${payload.preferredCoach}`,
+          'source: legacy-bowling-academy',
+          'Home center: Forest Hill Lanes, Harford County, MD'
+        ].join('\n');
+      }
+
+      function showResult(state, payload) {
+        const copy = {
+          fallback: {
+            badge: 'Not sent',
+            heading: 'Online booking is not connected yet',
+            body: 'Nothing was sent from this website. Online booking is coming soon. Open your email app to send this to info@legacybowlingacademy.com, or copy the summary if the app does not open.'
+          },
+          success: {
+            badge: 'Handed off',
+            heading: 'Your request left this page',
+            body: 'We handed it to the academy desk. This kind of form post does not come back with a receipt, so the page cannot prove it arrived. We will reply within one business day. If you do not hear back, email info@legacybowlingacademy.com. Nothing is stored on this website.'
+          },
+          error: {
+            badge: 'Not sent',
+            heading: 'That request did not go through',
+            body: 'The academy desk did not get this. Nothing was marked as sent. Try again, or email the summary to info@legacybowlingacademy.com.'
+          },
+          dropped: {
+            badge: 'Received',
+            heading: 'Thanks. You are all set.',
+            body: 'If this was a real request, there is nothing else to do on this page.'
+          }
+        }[state];
+
+        confirmationCard.classList.remove('is-error', 'is-success', 'is-fallback');
+        if (state === 'error') confirmationCard.classList.add('is-error');
+        else if (state === 'success') confirmationCard.classList.add('is-success');
+        else confirmationCard.classList.add('is-fallback');
+
+        confirmBadgeText.textContent = copy.badge;
+        confirmHeading.textContent = copy.heading;
+        confirmBody.textContent = copy.body;
+
+        const showSummary = state !== 'dropped';
+        confirmSummaryPre.hidden = !showSummary;
+        copySummaryBtn.hidden = !showSummary;
+        mailtoLaunchBtn.hidden = state === 'success' || state === 'dropped';
+
+        if (showSummary) {
+          const summaryText = summaryFor(payload, state);
+          confirmSummaryPre.textContent = summaryText;
+          const subject = encodeURIComponent(`Legacy Bowling Academy ${payload.form}: ${payload.name}`);
+          const mailBody = encodeURIComponent(summaryText);
+          mailtoLaunchBtn.href = `mailto:info@legacybowlingacademy.com?subject=${subject}&body=${mailBody}`;
+        }
+
+        if (bookingForm) bookingForm.style.display = 'none';
+        confirmationCard.classList.add('visible');
+        confirmHeading.focus();
+      }
+
+      function markInvalid(id, message) {
+        const el = document.getElementById(id);
+        if (el) {
+          el.setAttribute('aria-invalid', 'true');
+          el.focus();
+        }
+        formErrorEl.textContent = message;
+        formErrorEl.classList.add('visible');
+      }
+
+      function validate(payload) {
+        clearInvalid();
+        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email);
+        const programs = ['private lesson', 'clinic-camp', 'youth program'];
+        const ages = ['youth', 'adult', 'senior'];
+        if (!payload.name) {
+          markInvalid('full-name', 'Enter your name.');
+          return false;
+        }
+        if (!emailOk) {
+          markInvalid('email', 'Enter a valid email address.');
+          return false;
+        }
+        if (!ages.includes(payload.ageGroup)) {
+          markInvalid('age-group', 'Choose youth, adult, or senior.');
+          return false;
+        }
+        if (payload.form === 'booking') {
+          if (payload.phone.replace(/\D/g, '').length < 7) {
+            markInvalid('phone', 'Enter a phone number so we can confirm the booking.');
+            return false;
+          }
+          if (!programs.includes(payload.program)) {
+            markInvalid('program', 'Choose a program: private lesson, clinic or camp, or youth program.');
+            return false;
+          }
+          if (!payload.preferredTimes) {
+            markInvalid('preferred-times', 'Add the days and times that work for you.');
+            return false;
+          }
+        } else if (!payload.message) {
+          markInvalid('message-notes', 'Add a short message so we know what you are asking.');
+          return false;
+        }
+        return true;
+      }
 
       if (bookingForm) {
-        bookingForm.addEventListener('submit', (e) => {
-          e.preventDefault();
+        bookingForm.addEventListener('input', (event) => {
+          const target = event.target;
+          if (target && target.removeAttribute) target.removeAttribute('aria-invalid');
+        });
 
-          const fullName = document.getElementById('full-name').value.trim();
-          const email = document.getElementById('email').value.trim();
-          const ageGroup = ageGroupSelect.value;
-          const preferredCoach = coachSelect.value;
-          const sessionFocus = sessionFocusSelect.value;
-          const messageNotes = messageTextarea.value.trim();
+        bookingForm.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const payload = buildPayload();
 
-          const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-          if (!fullName || !isEmailValid || !messageNotes) {
-            formErrorEl.classList.add('visible');
+          if (payload.website) {
+            showResult('dropped', payload);
             return;
           }
 
-          formErrorEl.classList.remove('visible');
+          if (!validate(payload)) return;
 
-          const summaryText = [
-            'LEGACY BOWLING ACADEMY — COACHING INQUIRY',
-            '=========================================',
-            `Name:            ${fullName}`,
-            `Email:           ${email}`,
-            `Age Group:       ${ageGroup}`,
-            `Preferred Coach: ${preferredCoach}`,
-            `Session Focus:   ${sessionFocus}`,
-            'Home Center:     Forest Hill Lanes (Harford County, MD)',
-            '',
-            'Message & Availability:',
-            messageNotes
-          ].join('\n');
+          const endpoint = configuredHttpsUrl(ACADEMY_ENDPOINT);
+          if (!endpoint) {
+            showResult('fallback', payload);
+            showToast('Email ready', 'Nothing was sent from the site. Open your email app or copy the summary.');
+            return;
+          }
 
-          confirmSummaryPre.textContent = summaryText;
+          const label = submitBtn.querySelector('span');
+          submitBtn.disabled = true;
+          if (label) label.textContent = 'Sending…';
 
-          const subject = encodeURIComponent(`Legacy Bowling Academy: ${sessionFocus} (${fullName})`);
-          const body = encodeURIComponent(summaryText);
-          mailtoLaunchBtn.href = `mailto:info@legacybowlingacademy.com?subject=${subject}&body=${body}`;
+          const body = new URLSearchParams();
+          PAYLOAD_KEYS.forEach((key) => {
+            const value = payload[key] == null ? '' : String(payload[key]);
+            body.set(key, value);
+          });
 
-          bookingForm.style.display = 'none';
-          confirmationCard.classList.add('visible');
-          showToast('Inquiry Ready', 'Click "Open in Email App" or copy your formatted summary below.');
+          try {
+            const signal = (typeof AbortSignal !== 'undefined' && AbortSignal.timeout)
+              ? AbortSignal.timeout(15000)
+              : undefined;
+            await fetch(endpoint, {
+              method: 'POST',
+              mode: 'no-cors',
+              body: body,
+              signal: signal
+            });
+            showResult('success', payload);
+            showToast('Request handed off', 'We will reply within one business day. This page cannot show a receipt.');
+          } catch (err) {
+            showResult('error', payload);
+            showToast('Not sent', 'Try again, or email the summary yourself.');
+          } finally {
+            if (submitBtn) submitBtn.disabled = false;
+            refreshSubmitLabel();
+          }
         });
       }
 
       if (copySummaryBtn) {
-        copySummaryBtn.addEventListener('click', () => {
-          const textToCopy = confirmSummaryPre.textContent;
-          const tempArea = document.createElement('textarea');
-          tempArea.value = textToCopy;
-          tempArea.style.position = 'fixed';
-          tempArea.style.opacity = '0';
-          document.body.appendChild(tempArea);
-          tempArea.select();
+        copySummaryBtn.addEventListener('click', async () => {
+          const textToCopy = confirmSummaryPre.textContent || '';
           try {
-            document.execCommand('copy');
-            showToast('Copied to Clipboard', 'Your formatted inquiry summary has been copied.');
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(textToCopy);
+              showToast('Copied', 'The summary is on your clipboard.');
+              return;
+            }
+            throw new Error('clipboard unavailable');
           } catch (err) {
-            showToast('Manual Copy', 'Please select and copy the summary text above.');
-          } finally {
+            const tempArea = document.createElement('textarea');
+            tempArea.value = textToCopy;
+            tempArea.setAttribute('readonly', '');
+            tempArea.style.position = 'fixed';
+            tempArea.style.opacity = '0';
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            let copied = false;
+            try {
+              copied = document.execCommand('copy');
+            } catch (copyErr) {
+              copied = false;
+            }
             document.body.removeChild(tempArea);
+            showToast(
+              copied ? 'Copied' : 'Copy the summary',
+              copied ? 'The summary is on your clipboard.' : 'Select the summary text and copy it manually.'
+            );
           }
         });
       }
 
       if (resetFormBtn) {
         resetFormBtn.addEventListener('click', () => {
-          bookingForm.reset();
-          confirmationCard.classList.remove('visible');
-          bookingForm.style.display = 'block';
+          if (bookingForm) bookingForm.reset();
+          syncSessionFocusVisibility();
+          showForm();
+          const nameInput = document.getElementById('full-name');
+          if (nameInput) nameInput.focus();
         });
       }
+
     })();
   </script>
 </body>
