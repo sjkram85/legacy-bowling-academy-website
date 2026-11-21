@@ -613,7 +613,372 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      filter: drop-shadow(0 0 24px rgba(0, 212, 255, 0.28));
+    }
+
+    /*
+      Hero emblem. Same idea as the Legacy Computing Services shield:
+      a 7s rotateY spin, one cyan surge per revolution, a rim burst on the
+      face-on frame. The arrow was measured in the emblem viewBox (0 0 160 160).
+      The cyan shaft runs from about (36, 124) to (125, 35); the head tip is
+      (147, 20). Percents are those points divided by 160. A -2s delay puts
+      the tip burst on rotateY(0), the face-on frame. A small rotateZ tilt
+      is the hook axis, so the crest rolls instead of flipping like a coin.
+      Spin, travel, burst, hook, and the pin scatter use transform and opacity only.
+    */
+    .lba-emblem-perspective,
+    .lba-hook-lane {
+      --lba-duration: 7s;
+      --lba-delay: -2s;
+    }
+
+    .lba-emblem-perspective {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      perspective: 680px;
+      perspective-origin: 50% 46%;
+    }
+
+    .lba-emblem-rotor {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: lba-emblem-spin var(--lba-duration) linear infinite;
+    }
+
+    .lba-emblem-svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.58)) drop-shadow(0 0 16px rgba(0, 212, 255, 0.22));
+    }
+
+    .lba-emblem-surge {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .lba-emblem-aura {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><path d='M80 12 L130 30 L127 78 C124 111 104 135 80 148 C56 135 36 111 33 78 L30 30 Z' fill='none' stroke='white' stroke-width='22' stroke-opacity='0.55' stroke-linejoin='round'/><path d='M80 12 L130 30 L127 78 C124 111 104 135 80 148 C56 135 36 111 33 78 L30 30 Z' fill='none' stroke='white' stroke-width='7' stroke-linejoin='round'/></svg>");
+      mask-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><path d='M80 12 L130 30 L127 78 C124 111 104 135 80 148 C56 135 36 111 33 78 L30 30 Z' fill='none' stroke='white' stroke-width='22' stroke-opacity='0.55' stroke-linejoin='round'/><path d='M80 12 L130 30 L127 78 C124 111 104 135 80 148 C56 135 36 111 33 78 L30 30 Z' fill='none' stroke='white' stroke-width='7' stroke-linejoin='round'/></svg>");
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    .lba-emblem-aura-glow {
+      position: absolute;
+      left: 91.9%;
+      top: 12.5%;
+      width: 240%;
+      height: 240%;
+      border-radius: 50%;
+      background: radial-gradient(circle,
+        rgba(224, 247, 255, 0.98) 0%,
+        rgba(0, 212, 255, 0.95) 22%,
+        rgba(56, 189, 248, 0.9) 48%,
+        rgba(2, 132, 199, 0.72) 72%,
+        rgba(2, 132, 199, 0) 100%);
+      mix-blend-mode: screen;
+      animation: lba-aura-spread var(--lba-duration) linear var(--lba-delay) infinite;
+    }
+
+    .lba-emblem-surge-clip {
+      position: absolute;
+      inset: 0;
+      -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><path d='M36 124 L125 35' fill='none' stroke='white' stroke-width='16' stroke-linecap='round' stroke-opacity='0.35'/><path d='M36 124 L125 35' fill='none' stroke='white' stroke-width='9' stroke-linecap='round'/><path d='M118 40 L147 20' fill='none' stroke='white' stroke-width='12' stroke-linecap='round'/><path d='M114 34 L147 20 L137 54 L128 40 Z' fill='white'/></svg>");
+      mask-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><path d='M36 124 L125 35' fill='none' stroke='white' stroke-width='16' stroke-linecap='round' stroke-opacity='0.35'/><path d='M36 124 L125 35' fill='none' stroke='white' stroke-width='9' stroke-linecap='round'/><path d='M118 40 L147 20' fill='none' stroke='white' stroke-width='12' stroke-linecap='round'/><path d='M114 34 L147 20 L137 54 L128 40 Z' fill='white'/></svg>");
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    .lba-emblem-surge-mover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      animation: lba-surge-travel var(--lba-duration) linear var(--lba-delay) infinite;
+      mix-blend-mode: screen;
+    }
+
+    .lba-emblem-surge-blob {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 38%;
+      height: 46%;
+      transform-origin: 100% 50%;
+      transform: translate(-100%, -50%) rotate(-45deg);
+      border-radius: 999px;
+      background: linear-gradient(90deg,
+        rgba(2, 132, 199, 0) 0%,
+        rgba(2, 132, 199, 0.35) 22%,
+        rgba(0, 212, 255, 0.9) 52%,
+        rgba(224, 247, 255, 1) 74%,
+        rgba(255, 255, 255, 1) 100%);
+    }
+
+    .lba-emblem-surge-head {
+      z-index: 2;
+    }
+
+    .lba-emblem-surge-glow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 16%;
+      height: 16%;
+      border-radius: 50%;
+      transform: translate(-42%, -50%);
+      background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(125, 211, 252, 0.8) 30%,
+        rgba(0, 212, 255, 0.35) 58%,
+        rgba(0, 212, 255, 0) 76%);
+    }
+
+    .lba-emblem-surge-flash,
+    .lba-emblem-surge-bloom {
+      position: absolute;
+      left: 84%;
+      top: 18%;
+      width: 28%;
+      height: 28%;
+      border-radius: 50%;
+      background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.98) 0%,
+        rgba(224, 247, 255, 0.9) 24%,
+        rgba(0, 212, 255, 0.65) 50%,
+        rgba(56, 189, 248, 0) 76%);
+      opacity: 0;
+      mix-blend-mode: screen;
+      animation: lba-surge-flash var(--lba-duration) linear var(--lba-delay) infinite;
+    }
+
+    .lba-emblem-surge-bloom {
+      width: 46%;
+      height: 46%;
+      left: 78%;
+      top: 8%;
+      background: radial-gradient(circle,
+        rgba(186, 245, 255, 0.8) 0%,
+        rgba(0, 212, 255, 0.38) 40%,
+        rgba(2, 132, 199, 0) 70%);
+    }
+
+    .lba-pin-burst {
+      position: absolute;
+      left: 84%;
+      top: 2%;
+      width: 34px;
+      height: 32px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .lba-pin {
+      position: absolute;
+      width: 6px;
+      height: 16px;
+      border-radius: 4px 4px 2px 2px;
+      background: linear-gradient(90deg, #94a3b8 0%, #f8fafc 46%, #cbd5e1 72%, #64748b 100%);
+      box-shadow: inset 0 -4px 0 rgba(2, 132, 199, 0.85), inset 0 -7px 0 rgba(0, 212, 255, 0.95);
+      opacity: 0.78;
+    }
+
+    .lba-pin-head { left: 14px; top: 0; animation: lba-pin-head var(--lba-duration) linear var(--lba-delay) infinite; }
+    .lba-pin-left { left: 3px; top: 10px; animation: lba-pin-left var(--lba-duration) linear var(--lba-delay) infinite; }
+    .lba-pin-right { left: 25px; top: 10px; animation: lba-pin-right var(--lba-duration) linear var(--lba-delay) infinite; }
+
+    .lba-pin-flash {
+      position: absolute;
+      left: 16px;
+      top: 12px;
+      width: 42px;
+      height: 42px;
+      margin: -21px 0 0 -21px;
+      border-radius: 50%;
+      background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.96) 0%,
+        rgba(125, 211, 252, 0.75) 28%,
+        rgba(0, 212, 255, 0.28) 58%,
+        rgba(0, 212, 255, 0) 74%);
+      opacity: 0;
+      animation: lba-pin-flash var(--lba-duration) linear var(--lba-delay) infinite;
+    }
+
+    .lba-hook-lane {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .lba-hook-mover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      animation: lba-hook-travel var(--lba-duration) linear var(--lba-delay) infinite;
+    }
+
+    .lba-hook-ball {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 13px;
+      height: 13px;
+      margin: -6px 0 0 -6px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 34% 30%, #ffffff 0%, #7dd3fc 26%, #0284c7 64%, #082f49 100%);
+    }
+
+    .lba-hook-trail {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 72px;
+      height: 7px;
+      margin: -3px 0 0 -78px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(2, 132, 199, 0) 0%, rgba(0, 212, 255, 0.18) 38%, rgba(224, 247, 255, 0.95) 100%);
+    }
+
+    @keyframes lba-emblem-spin {
+      0% { transform: rotateY(0deg) rotateZ(0deg); }
+      24% { transform: rotateY(86deg) rotateZ(-7deg); }
+      50% { transform: rotateY(180deg) rotateZ(-1.5deg); }
+      76% { transform: rotateY(274deg) rotateZ(6deg); }
+      100% { transform: rotateY(360deg) rotateZ(0deg); }
+    }
+
+    @keyframes lba-surge-travel {
+      0% { transform: translate3d(22.5%, 77.5%, 0); opacity: 0; }
+      5% { transform: translate3d(32%, 68%, 0); opacity: 1; }
+      12% { transform: translate3d(46%, 54%, 0); opacity: 1; }
+      18% { transform: translate3d(60%, 40%, 0); opacity: 1; }
+      24% { transform: translate3d(76%, 24%, 0); opacity: 1; }
+      28.6% { transform: translate3d(91.9%, 12.5%, 0); opacity: 1; }
+      33% { transform: translate3d(91.9%, 12.5%, 0); opacity: 0; }
+      100% { transform: translate3d(22.5%, 77.5%, 0); opacity: 0; }
+    }
+
+    @keyframes lba-surge-flash {
+      0%, 24% { opacity: 0; transform: translate3d(-50%, -50%, 0) scale(0.5); }
+      28.6% { opacity: 0.85; transform: translate3d(-50%, -50%, 0) scale(0.9); }
+      34% { opacity: 0; transform: translate3d(-50%, -50%, 0) scale(1.12); }
+      100% { opacity: 0; transform: translate3d(-50%, -50%, 0) scale(0.5); }
+    }
+
+    @keyframes lba-aura-spread {
+      0%, 24% { opacity: 0; transform: translate3d(-50%, -50%, 0) scale(0.1); }
+      30% { opacity: 0.8; transform: translate3d(-50%, -50%, 0) scale(0.4); }
+      36% { opacity: 1; transform: translate3d(-50%, -50%, 0) scale(1); }
+      43% { opacity: 1; transform: translate3d(-50%, -50%, 0) scale(1); }
+      50% { opacity: 0; transform: translate3d(-50%, -50%, 0) scale(0.12); }
+      100% { opacity: 0; transform: translate3d(-50%, -50%, 0) scale(0.1); }
+    }
+
+    @keyframes lba-hook-travel {
+      0% { transform: translate3d(76%, 86%, 0) rotate(-82deg); opacity: 0; }
+      8% { transform: translate3d(74%, 68%, 0) rotate(-74deg); opacity: 1; }
+      16% { transform: translate3d(68%, 50%, 0) rotate(-56deg); opacity: 1; }
+      24% { transform: translate3d(58%, 36%, 0) rotate(-34deg); opacity: 1; }
+      28.6% { transform: translate3d(52%, 30%, 0) rotate(-16deg); opacity: 1; }
+      35% { transform: translate3d(50%, 28%, 0) rotate(-10deg); opacity: 0; }
+      100% { transform: translate3d(76%, 86%, 0) rotate(-82deg); opacity: 0; }
+    }
+
+    @keyframes lba-pin-head {
+      0%, 16% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0deg); }
+      22% { opacity: 0.9; transform: translate3d(0, 0, 0) rotate(0deg); }
+      28.6% { opacity: 1; transform: translate3d(1px, -11px, 0) rotate(8deg); }
+      37% { opacity: 0; transform: translate3d(2px, -16px, 0) rotate(12deg); }
+      100% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0deg); }
+    }
+
+    @keyframes lba-pin-left {
+      0%, 16% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0deg); }
+      22% { opacity: 0.9; transform: translate3d(0, 0, 0) rotate(0deg); }
+      28.6% { opacity: 1; transform: translate3d(-12px, -2px, 0) rotate(-18deg); }
+      37% { opacity: 0; transform: translate3d(-18px, 6px, 0) rotate(-26deg); }
+      100% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0deg); }
+    }
+
+    @keyframes lba-pin-right {
+      0%, 16% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0deg); }
+      22% { opacity: 0.9; transform: translate3d(0, 0, 0) rotate(0deg); }
+      28.6% { opacity: 1; transform: translate3d(13px, 1px, 0) rotate(16deg); }
+      37% { opacity: 0; transform: translate3d(18px, 8px, 0) rotate(24deg); }
+      100% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0deg); }
+    }
+
+    @keyframes lba-pin-flash {
+      0%, 24% { opacity: 0; transform: scale(0.4); }
+      29% { opacity: 0.95; transform: scale(1); }
+      37% { opacity: 0; transform: scale(1.45); }
+      100% { opacity: 0; transform: scale(0.4); }
+    }
+
+    .identity-canvas-stage.is-offscreen .lba-emblem-rotor,
+    .identity-canvas-stage.is-offscreen .lba-emblem-surge-mover,
+    .identity-canvas-stage.is-offscreen .lba-emblem-surge-flash,
+    .identity-canvas-stage.is-offscreen .lba-emblem-surge-bloom,
+    .identity-canvas-stage.is-offscreen .lba-emblem-aura-glow,
+    .identity-canvas-stage.is-offscreen .lba-hook-mover,
+    .identity-canvas-stage.is-offscreen .lba-pin,
+    .identity-canvas-stage.is-offscreen .lba-pin-flash {
+      animation-play-state: paused;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .lba-emblem-rotor,
+      .lba-emblem-surge-mover,
+      .lba-emblem-surge-flash,
+      .lba-emblem-surge-bloom,
+      .lba-emblem-aura-glow,
+      .lba-hook-mover,
+      .lba-pin-head,
+      .lba-pin-left,
+      .lba-pin-right,
+      .lba-pin-flash {
+        animation: none;
+      }
+
+      .lba-emblem-rotor {
+        transform: none;
+      }
+
+      .lba-emblem-surge,
+      .lba-hook-lane,
+      .lba-pin-flash {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .lba-hook-ball {
+        width: 10px;
+        height: 10px;
+        margin: -5px 0 0 -5px;
+      }
+
+      .lba-hook-trail {
+        width: 48px;
+        margin-left: -54px;
+      }
     }
 
     .identity-wordmark-lg {
@@ -2315,11 +2680,42 @@
         <div class="identity-card">
           <div class="identity-canvas-stage" id="canvas-container">
             <canvas id="academy-canvas" aria-hidden="true"></canvas>
+            <div class="lba-hook-lane" aria-hidden="true">
+              <div class="lba-hook-mover">
+                <div class="lba-hook-trail"></div>
+                <div class="lba-hook-ball"></div>
+              </div>
+            </div>
             <div class="identity-centerpiece">
               <div class="identity-emblem-wrap">
-                <svg width="150" height="150" viewBox="0 0 160 160" aria-label="Legacy Bowling Academy Official Shield Emblem">
-                  <use href="#lba-official-emblem"></use>
-                </svg>
+                <div class="lba-emblem-perspective">
+                  <div class="lba-emblem-rotor">
+                    <svg class="lba-emblem-svg" viewBox="0 0 160 160" aria-label="Legacy Bowling Academy Official Shield Emblem">
+                      <use href="#lba-official-emblem"></use>
+                    </svg>
+                    <div class="lba-emblem-surge" aria-hidden="true">
+                      <div class="lba-emblem-aura">
+                        <div class="lba-emblem-aura-glow"></div>
+                      </div>
+                      <div class="lba-emblem-surge-clip">
+                        <div class="lba-emblem-surge-mover">
+                          <div class="lba-emblem-surge-blob"></div>
+                        </div>
+                        <div class="lba-emblem-surge-flash"></div>
+                      </div>
+                      <div class="lba-emblem-surge-mover lba-emblem-surge-head">
+                        <div class="lba-emblem-surge-glow"></div>
+                      </div>
+                      <div class="lba-emblem-surge-bloom"></div>
+                    </div>
+                  </div>
+                  <div class="lba-pin-burst" aria-hidden="true">
+                    <span class="lba-pin lba-pin-head"></span>
+                    <span class="lba-pin lba-pin-left"></span>
+                    <span class="lba-pin lba-pin-right"></span>
+                    <span class="lba-pin-flash"></span>
+                  </div>
+                </div>
               </div>
               <div class="identity-wordmark-lg metallic-silver-text">LEGACY</div>
               <div class="identity-submark">BOWLING ACADEMY</div>
@@ -3225,23 +3621,26 @@
 
       if (canvas && canvasContainer) {
         const ctx = canvas.getContext('2d');
+        const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
         let width = 0;
         let height = 0;
         let particles = [];
-        let animStarted = false;
+        let frameId = 0;
+        let onScreen = true;
+        let reduceMotion = motionQuery.matches;
 
         function initParticles() {
           particles = [];
-          const count = Math.max(20, Math.floor((width * height) / 8500));
+          const cap = width < 520 ? 14 : 26;
+          const count = Math.min(cap, Math.max(10, Math.floor((width * height) / 16000)));
           for (let i = 0; i < count; i++) {
             particles.push({
               x: Math.random() * width,
               y: Math.random() * height,
-              r: Math.random() * 1.9 + 0.8,
-              vx: (Math.random() - 0.5) * 0.22,
-              vy: -Math.random() * 0.32 - 0.08,
-              cyan: Math.random() > 0.4,
-              alpha: Math.random() * 0.45 + 0.2
+              r: Math.random() * 1.5 + 0.6,
+              vy: -Math.random() * 0.28 - 0.06,
+              cyan: Math.random() > 0.45,
+              alpha: Math.random() * 0.32 + 0.12
             });
           }
         }
@@ -3251,59 +3650,54 @@
           const dpr = Math.min(window.devicePixelRatio || 1, 2);
           width = rect.width;
           height = rect.height;
-          canvas.width = Math.floor(width * dpr);
-          canvas.height = Math.floor(height * dpr);
+          canvas.width = Math.max(1, Math.floor(width * dpr));
+          canvas.height = Math.max(1, Math.floor(height * dpr));
           ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
           initParticles();
+          if (reduceMotion) drawFrame(0);
         }
 
-        function drawLanePerspective() {
+        function drawLanePerspective(phase) {
           const vanishX = width * 0.5;
-          const vanishY = height * 0.05;
-          ctx.strokeStyle = 'rgba(148, 163, 184, 0.1)';
+          const vanishY = height * 0.08;
+          ctx.strokeStyle = 'rgba(148, 163, 184, 0.16)';
           ctx.lineWidth = 1;
 
-          const boardCount = 10;
+          const boardCount = 12;
           for (let i = 0; i <= boardCount; i++) {
             const t = i / boardCount;
-            const bottomX = width * (0.04 + t * 0.92);
-            const topX = vanishX + (bottomX - vanishX) * 0.32;
+            const bottomX = width * (0.06 + t * 0.88);
+            const topX = vanishX + (bottomX - vanishX) * 0.28;
             ctx.beginPath();
             ctx.moveTo(bottomX, height);
             ctx.lineTo(topX, vanishY);
             ctx.stroke();
           }
 
-          // Subtle Electric Cyan Targeting Arrows Row
-          const arrowY = height * 0.76;
-          ctx.fillStyle = 'rgba(0, 212, 255, 0.2)';
+          const arrowY = height * (0.62 + Math.sin(phase) * 0.015);
           for (let j = -3; j <= 3; j++) {
-            const ax = width * 0.5 + j * (width * 0.095);
+            const ax = width * 0.5 + j * (width * 0.09);
+            const lit = Math.abs(((phase / 1.4) + j) % 7) < 1.2;
+            ctx.fillStyle = lit ? 'rgba(0, 212, 255, 0.55)' : 'rgba(0, 212, 255, 0.18)';
             ctx.beginPath();
-            ctx.moveTo(ax, arrowY - 4.5);
-            ctx.lineTo(ax - 3.2, arrowY + 3.5);
-            ctx.lineTo(ax + 3.2, arrowY + 3.5);
+            ctx.moveTo(ax, arrowY - 5);
+            ctx.lineTo(ax - 3.4, arrowY + 3.6);
+            ctx.lineTo(ax + 3.4, arrowY + 3.6);
             ctx.closePath();
             ctx.fill();
           }
         }
 
-        function animateCanvas() {
-          ctx.clearRect(0, 0, width, height);
-          drawLanePerspective();
-
+        function drawParticles(moving) {
           for (let i = 0; i < particles.length; i++) {
             const p = particles[i];
-            p.x += p.vx;
-            p.y += p.vy;
-
-            if (p.y < -8) {
-              p.y = height + 8;
-              p.x = Math.random() * width;
+            if (moving) {
+              p.y += p.vy;
+              if (p.y < -8) {
+                p.y = height + 8;
+                p.x = Math.random() * width;
+              }
             }
-            if (p.x < -8) p.x = width + 8;
-            if (p.x > width + 8) p.x = -8;
-
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
             ctx.fillStyle = p.cyan
@@ -3311,23 +3705,56 @@
               : `rgba(226, 232, 240, ${p.alpha * 0.65})`;
             ctx.fill();
           }
-
-          window.requestAnimationFrame(animateCanvas);
         }
 
-        window.addEventListener('resize', resizeCanvas);
-        window.addEventListener('load', () => {
-          resizeCanvas();
-          if (!animStarted) {
-            animStarted = true;
-            animateCanvas();
+        function drawFrame(phase) {
+          ctx.clearRect(0, 0, width, height);
+          drawLanePerspective(phase);
+          drawParticles(!reduceMotion && onScreen);
+        }
+
+        function tick(now) {
+          frameId = 0;
+          if (reduceMotion || !onScreen) return;
+          drawFrame(now / 1000);
+          frameId = window.requestAnimationFrame(tick);
+        }
+
+        function syncLoop() {
+          if (frameId) {
+            window.cancelAnimationFrame(frameId);
+            frameId = 0;
           }
-        });
-        resizeCanvas();
-        if (!animStarted) {
-          animStarted = true;
-          animateCanvas();
+          if (reduceMotion || !onScreen) {
+            drawFrame(0);
+            return;
+          }
+          frameId = window.requestAnimationFrame(tick);
         }
+
+        window.addEventListener('resize', () => {
+          resizeCanvas();
+          syncLoop();
+        });
+
+        if (typeof IntersectionObserver === 'function') {
+          const observer = new IntersectionObserver((entries) => {
+            onScreen = entries.some((entry) => entry.isIntersecting);
+            canvasContainer.classList.toggle('is-offscreen', !onScreen);
+            syncLoop();
+          });
+          observer.observe(canvasContainer);
+        }
+
+        if (typeof motionQuery.addEventListener === 'function') {
+          motionQuery.addEventListener('change', () => {
+            reduceMotion = motionQuery.matches;
+            syncLoop();
+          });
+        }
+
+        resizeCanvas();
+        syncLoop();
       }
 
       /* ----------------------------------------------------------------------
