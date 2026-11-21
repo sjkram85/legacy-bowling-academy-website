@@ -1,0 +1,3191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legacy Bowling Academy | Elevating Your Game. Defining Your Legacy.</title>
+  <meta name="description" content="Legacy Bowling Academy offers USBC-certified coaching for youth, adult, and senior bowlers at Forest Hill Lanes in Harford County, MD. Master the finer mechanics and conquer the mental game with persistence and focus." />
+  <meta property="og:title" content="Legacy Bowling Academy | Elevating Your Game. Defining Your Legacy." />
+  <meta property="og:description" content="All-ages USBC-certified bowling coaching at Forest Hill Lanes. Finer mechanics, mental game coaching, video analysis, and arsenal guidance in collaboration with Doc's Pro Shop." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://legacybowlingacademy.com/" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================================
+       DESIGN TOKENS & RESET
+       Midnight Navy + Electric Cyan + Metallic Chrome Silver (Official Logo)
+       ========================================================================= */
+    :root {
+      --bg-base: #08111D;
+      --bg-surface: #0E1B2C;
+      --bg-elevated: #14253B;
+      --bg-elevated-hover: #1A304C;
+
+      --border-chrome: rgba(148, 163, 184, 0.18);
+      --border-chrome-strong: rgba(203, 213, 225, 0.28);
+      --border-cyan: rgba(0, 212, 255, 0.38);
+
+      --text-primary: #F1F5F9;
+      --text-secondary: #CBD5E1;
+      --text-muted: #94A3B8;
+
+      --accent-cyan: #00D4FF;
+      --accent-sky: #38BDF8;
+      --accent-blue: #0284C7;
+      --accent-cyan-dim: rgba(0, 212, 255, 0.11);
+      --accent-cyan-glow: rgba(0, 212, 255, 0.28);
+
+      --status-green: #10B981;
+      --status-red: #EF4444;
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+
+      --shadow-card: 0 22px 48px -18px rgba(2, 6, 16, 0.72);
+      --shadow-cyan: 0 12px 32px -8px rgba(0, 212, 255, 0.36);
+
+      --transition-fast: 180ms cubic-bezier(0.22, 1, 0.36, 1);
+      --transition-med: 280ms cubic-bezier(0.22, 1, 0.36, 1);
+      --max-width: 1200px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Subtle Technical Engineering Grid Pattern */
+    .bg-grid-pattern {
+      background-image:
+        linear-gradient(to right, rgba(148, 163, 184, 0.032) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.032) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+
+    /* Layout Container */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding: 0 28px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 36px;
+      }
+    }
+
+    /* Metallic Chrome Silver Gradient Text (Matches Official LEGACY Wordmark) */
+    .metallic-silver-text {
+      background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 42%, #94A3B8 72%, #F1F5F9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Typography Helpers */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--accent-cyan-dim);
+      border: 1px solid var(--border-cyan);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.75);
+      animation: pulseCyan 2.2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulseCyan {
+      0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(0, 212, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+    }
+
+    .section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--border-chrome);
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding: 96px 0;
+      }
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, rgba(14, 27, 44, 0.62) 0%, rgba(8, 17, 29, 0.88) 100%);
+    }
+
+    .section-heading {
+      margin-top: 12px;
+      font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--text-primary);
+    }
+
+    .section-lead {
+      margin-top: 14px;
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.72;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 22px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
+      min-height: 46px;
+      text-align: center;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-sky) 55%, var(--accent-blue) 100%);
+      color: #06101B;
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 36px -8px rgba(0, 212, 255, 0.5);
+    }
+
+    .btn-secondary {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      border-color: var(--border-chrome-strong);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-elevated-hover);
+      border-color: var(--border-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .btn-ghost-cyan {
+      background: var(--accent-cyan-dim);
+      color: var(--accent-cyan);
+      border-color: var(--border-cyan);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 11px 18px;
+    }
+
+    .btn-ghost-cyan:hover {
+      background: rgba(0, 212, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    /* Elevated Card Base */
+    .card {
+      background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
+      border: 1px solid var(--border-chrome);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+    }
+
+    /* =========================================================================
+       1. STICKY HEADER & MOBILE DRAWER
+       ========================================================================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 17, 29, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-chrome);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 78px;
+      gap: 16px;
+    }
+
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.04;
+    }
+
+    .brand-primary {
+      font-size: 1.18rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--accent-sky);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .desktop-nav a {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: color var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .header-actions {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .header-cta {
+      padding: 10px 18px;
+      min-height: 42px;
+      font-size: 0.84rem;
+    }
+
+    .mobile-menu-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-chrome);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: border-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .mobile-menu-btn:hover {
+      border-color: var(--border-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .mobile-drawer {
+      display: none;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-chrome);
+      padding: 16px 20px 24px;
+    }
+
+    .mobile-drawer.open {
+      display: block;
+    }
+
+    .mobile-drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .mobile-drawer-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: background-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .mobile-drawer-links a:hover {
+      background: var(--bg-elevated);
+      color: var(--accent-cyan);
+    }
+
+    .mobile-drawer-links .nav-idx {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-cyan);
+      margin-right: 8px;
+    }
+
+    .mobile-drawer-cta {
+      margin-top: 14px;
+      width: 100%;
+    }
+
+    @media (min-width: 1040px) {
+      .desktop-nav, .header-actions {
+        display: flex;
+      }
+      .mobile-menu-btn, .mobile-drawer {
+        display: none !important;
+      }
+    }
+
+    /* =========================================================================
+       2. HERO SECTION
+       ========================================================================= */
+    .hero-section {
+      position: relative;
+      padding: 60px 0 78px;
+      border-bottom: 1px solid var(--border-chrome);
+      overflow: hidden;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-section {
+        padding: 84px 0 100px;
+      }
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -170px;
+      right: -120px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.14) 0%, rgba(2, 132, 199, 0.05) 45%, transparent 72%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 50px;
+      }
+    }
+
+    .hero-title {
+      margin-top: 22px;
+      font-size: clamp(2.25rem, 4.5vw, 3.55rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.09;
+      color: var(--text-primary);
+    }
+
+    .hero-title .cyan-silver-gradient {
+      display: block;
+      margin-top: 4px;
+      background: linear-gradient(95deg, #00D4FF 0%, #7DD3FC 52%, #E2E8F0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      margin-top: 22px;
+      font-size: 1.05rem;
+      line-height: 1.74;
+      color: var(--text-secondary);
+      max-width: 610px;
+    }
+
+    .hero-cta-row {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-trust-strip {
+      margin-top: 44px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-chrome);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 600px) {
+      .hero-trust-strip {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .trust-title {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .trust-desc {
+      font-size: 0.79rem;
+      color: var(--text-muted);
+    }
+
+    /* Right-hand Academy Identity Card */
+    .identity-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-chrome-strong);
+      overflow: hidden;
+      box-shadow: 0 30px 70px -22px rgba(0, 0, 0, 0.82), 0 0 0 1px rgba(0, 212, 255, 0.12);
+    }
+
+    .identity-canvas-stage {
+      position: relative;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 24px 32px;
+      background: radial-gradient(circle at 50% 42%, rgba(0, 212, 255, 0.13) 0%, rgba(14, 27, 44, 0.96) 68%, #08111D 100%);
+      overflow: hidden;
+    }
+
+    #academy-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 0;
+    }
+
+    .identity-centerpiece {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .identity-emblem-wrap {
+      width: 154px;
+      height: 154px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 0 24px rgba(0, 212, 255, 0.28));
+    }
+
+    .identity-wordmark-lg {
+      margin-top: 12px;
+      font-size: 2.05rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      padding-left: 0.22em;
+      line-height: 1;
+    }
+
+    .identity-submark {
+      margin-top: 6px;
+      font-size: 0.94rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      padding-left: 0.16em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+    }
+
+    .identity-tagline {
+      margin-top: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-cyan);
+      background: rgba(8, 17, 29, 0.82);
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+    }
+
+    .identity-meta-bar {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-top: 1px solid var(--border-chrome);
+      background: rgba(8, 17, 29, 0.94);
+    }
+
+    @media (min-width: 520px) {
+      .identity-meta-bar {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .meta-cell {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-chrome);
+    }
+
+    .meta-cell:last-child {
+      border-bottom: none;
+    }
+
+    @media (min-width: 520px) {
+      .meta-cell {
+        border-bottom: none;
+        border-right: 1px solid var(--border-chrome);
+      }
+      .meta-cell:last-child {
+        border-right: none;
+      }
+    }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.63rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .meta-value {
+      margin-top: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .meta-value.cyan {
+      color: var(--accent-cyan);
+    }
+
+    /* =========================================================================
+       3. SECTION 01 // OUR PHILOSOPHY & COACHING STAFF
+       ========================================================================= */
+    .story-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (min-width: 960px) {
+      .story-grid {
+        grid-template-columns: 1.22fr 0.98fr;
+        gap: 44px;
+      }
+    }
+
+    .story-copy p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.78;
+      margin-bottom: 18px;
+    }
+
+    .story-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-copy strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .mental-callout-card {
+      padding: 30px;
+      border: 1px solid var(--border-cyan);
+      background: linear-gradient(155deg, rgba(0, 212, 255, 0.1) 0%, var(--bg-surface) 45%, var(--bg-elevated) 100%);
+    }
+
+    .mental-quote {
+      margin-top: 16px;
+      padding-left: 16px;
+      border-left: 3px solid var(--accent-cyan);
+    }
+
+    .mental-quote p {
+      font-size: 1.48rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    .mental-quote footer {
+      margin-top: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-sky);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .callout-list {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-chrome);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .callout-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.89rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .callout-list .check-icon {
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pillars-grid {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 768px) {
+      .pillars-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .pillar-card {
+      padding: 24px;
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-chrome);
+      transition: border-color var(--transition-fast);
+    }
+
+    .pillar-card:hover {
+      border-color: var(--border-cyan);
+    }
+
+    .pillar-idx {
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      letter-spacing: 0.08em;
+    }
+
+    .pillar-title {
+      margin-top: 9px;
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .pillar-desc {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.62;
+    }
+
+    /* Meet Our Coaching Staff */
+    .staff-header {
+      margin-top: 68px;
+      padding-top: 52px;
+      border-top: 1px solid var(--border-chrome);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      scroll-margin-top: 92px;
+    }
+
+    .staff-subheading {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .staff-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    @media (min-width: 860px) {
+      .staff-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .coach-card {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .coach-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-chrome-strong);
+    }
+
+    .coach-card.featured {
+      border-color: var(--border-cyan);
+      background: linear-gradient(180deg, rgba(0, 212, 255, 0.08) 0%, var(--bg-elevated) 38%, var(--bg-surface) 100%);
+    }
+
+    .coach-role-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--bg-base);
+      border: 1px solid var(--border-chrome);
+      color: var(--text-muted);
+    }
+
+    .coach-card.featured .coach-role-tag {
+      background: var(--accent-cyan-dim);
+      border-color: var(--border-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .coach-name {
+      margin-top: 16px;
+      font-size: 1.24rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .coach-subtitle {
+      margin-top: 3px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--accent-sky);
+    }
+
+    .coach-badges {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .badge-chip {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: rgba(148, 163, 184, 0.08);
+      border: 1px solid var(--border-chrome);
+      color: var(--text-secondary);
+    }
+
+    .badge-chip.cyan {
+      color: var(--accent-cyan);
+      border-color: rgba(0, 212, 255, 0.28);
+      background: rgba(0, 212, 255, 0.09);
+    }
+
+    .coach-bio {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.66;
+    }
+
+    .coach-focus-box {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-chrome);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .coach-focus-box strong {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-cyan);
+      margin-bottom: 4px;
+    }
+
+    /* Slim Recruiting CTA Banner */
+    .recruit-banner {
+      margin-top: 28px;
+      padding: 22px 26px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(90deg, rgba(0, 212, 255, 0.1) 0%, var(--bg-elevated) 55%, var(--bg-surface) 100%);
+      border: 1px solid var(--border-cyan);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 768px) {
+      .recruit-banner {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .recruit-banner-text h4 {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .recruit-banner-text p {
+      margin-top: 4px;
+      font-size: 0.89rem;
+      color: var(--text-secondary);
+    }
+
+    /* =========================================================================
+       4. SECTION 02 // WHAT EACH SESSION TAKES (4-TAB PANEL)
+       ========================================================================= */
+    .session-tabs-bar {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 640px) {
+      .session-tabs-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .session-tabs-bar {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .session-tab-btn {
+      text-align: left;
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-chrome);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      min-height: 76px;
+    }
+
+    .session-tab-btn:hover {
+      background: var(--bg-elevated);
+      border-color: var(--border-chrome-strong);
+    }
+
+    .session-tab-btn.active {
+      background: var(--bg-elevated);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.32), 0 14px 30px -12px rgba(0, 212, 255, 0.28);
+    }
+
+    .tab-num {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.69rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .session-tab-btn.active .tab-num {
+      color: var(--accent-cyan);
+    }
+
+    .tab-label {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.91rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .session-panel {
+      margin-top: 22px;
+      padding: 28px;
+      animation: fadeSlide 240ms ease-out;
+    }
+
+    @media (min-width: 768px) {
+      .session-panel {
+        padding: 36px;
+      }
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .session-panel-top {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: space-between;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-chrome);
+    }
+
+    @media (min-width: 820px) {
+      .session-panel-top {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    .session-panel-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-top: 6px;
+    }
+
+    .session-meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .session-stat {
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-base);
+      border: 1px solid var(--border-chrome);
+    }
+
+    .session-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .session-stat-val {
+      margin-top: 3px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .straight-talk-box {
+      margin-top: 24px;
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      background: rgba(0, 212, 255, 0.08);
+      border: 1px solid var(--border-cyan);
+    }
+
+    .straight-talk-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .straight-talk-box p {
+      margin-top: 8px;
+      font-size: 0.94rem;
+      color: var(--text-primary);
+      line-height: 1.66;
+    }
+
+    .session-checklists {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .session-checklists {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .checklist-col {
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: rgba(8, 17, 29, 0.72);
+      border: 1px solid var(--border-chrome);
+    }
+
+    .checklist-col h4 {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+
+    .checklist-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .checklist-col li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.52;
+    }
+
+    .checklist-col svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: var(--accent-cyan);
+    }
+
+    /* =========================================================================
+       5. SECTION 03 // INTERACTIVE FOCUS FINDER
+       ========================================================================= */
+    .diagnostic-shell {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (min-width: 960px) {
+      .diagnostic-shell {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .diag-step-group {
+      padding: 26px;
+    }
+
+    .diag-step-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 14px;
+    }
+
+    .diag-options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 560px) {
+      .diag-options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .diag-option-btn {
+      text-align: left;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-base);
+      border: 1px solid var(--border-chrome);
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .diag-option-btn:hover {
+      border-color: var(--border-chrome-strong);
+      color: var(--text-primary);
+      background: var(--bg-elevated-hover);
+    }
+
+    .diag-option-btn.selected {
+      background: var(--accent-cyan-dim);
+      border-color: var(--accent-cyan);
+      color: var(--text-primary);
+    }
+
+    .diag-radio-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid var(--text-muted);
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .diag-option-btn.selected .diag-radio-dot {
+      border-color: var(--accent-cyan);
+    }
+
+    .diag-option-btn.selected .diag-radio-dot::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+    }
+
+    .diag-divider {
+      height: 1px;
+      background: var(--border-chrome);
+      margin: 24px 0;
+    }
+
+    .diag-result-card {
+      padding: 30px;
+      border: 1px solid var(--border-cyan);
+      background: linear-gradient(170deg, rgba(0, 212, 255, 0.11) 0%, var(--bg-elevated) 44%, var(--bg-surface) 100%);
+    }
+
+    .diag-rec-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: var(--accent-cyan-dim);
+      border: 1px solid var(--border-cyan);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+    }
+
+    .diag-rec-title {
+      margin-top: 16px;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    .diag-rec-plan {
+      margin-top: 12px;
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      line-height: 1.68;
+    }
+
+    .diag-rec-meta {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(8, 17, 29, 0.78);
+      border: 1px solid var(--border-chrome);
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      line-height: 1.62;
+    }
+
+    .diag-rec-meta strong {
+      color: var(--text-primary);
+    }
+
+    .diag-result-actions {
+      margin-top: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* =========================================================================
+       6. SECTION 04 // HOW IT WORKS
+       ========================================================================= */
+    .process-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    @media (min-width: 820px) {
+      .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .process-card {
+      padding: 28px;
+      position: relative;
+    }
+
+    .process-step-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      letter-spacing: 0.08em;
+    }
+
+    .process-card h3 {
+      margin-top: 12px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .process-card p {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.68;
+    }
+
+    /* =========================================================================
+       7. SECTION 05 // PLAIN-ENGLISH FAQ ACCORDION
+       ========================================================================= */
+    .faq-list {
+      margin-top: 34px;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-chrome);
+      overflow: hidden;
+      transition: border-color var(--transition-fast);
+    }
+
+    .faq-item.open {
+      border-color: var(--border-cyan);
+      background: var(--bg-elevated);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      padding: 20px 22px;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--accent-cyan);
+      transition: transform var(--transition-med);
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-content {
+      display: none;
+      padding: 0 22px 22px;
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      line-height: 1.72;
+    }
+
+    .faq-item.open .faq-content {
+      display: block;
+    }
+
+    /* =========================================================================
+       8. SECTION 06 // START A CONVERSATION / INTAKE FORM
+       ========================================================================= */
+    .contact-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (min-width: 960px) {
+      .contact-grid {
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 44px;
+      }
+    }
+
+    .info-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .info-tile {
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-chrome);
+    }
+
+    .info-tile-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .info-tile-main {
+      margin-top: 5px;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .info-tile-sub {
+      margin-top: 3px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .form-card {
+      padding: 28px;
+    }
+
+    @media (min-width: 640px) {
+      .form-card {
+        padding: 36px;
+      }
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 640px) {
+      .form-row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field-group label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .field-input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-base);
+      border: 1px solid var(--border-chrome-strong);
+      color: var(--text-primary);
+      font-size: 0.92rem;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .field-input::placeholder {
+      color: #64748B;
+    }
+
+    .field-input:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.18);
+    }
+
+    textarea.field-input {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-error-msg {
+      display: none;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.42);
+      color: #FCA5A5;
+      font-size: 0.85rem;
+    }
+
+    .form-error-msg.visible {
+      display: block;
+    }
+
+    /* Inline Confirmation Card */
+    .confirmation-card {
+      display: none;
+    }
+
+    .confirmation-card.visible {
+      display: block;
+      animation: fadeSlide 260ms ease-out;
+    }
+
+    .confirm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #6EE7B7;
+      text-transform: uppercase;
+    }
+
+    .confirm-summary-pre {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-base);
+      border: 1px solid var(--border-chrome);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.62;
+    }
+
+    .confirm-actions {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* =========================================================================
+       9. FOOTER & TOAST NOTIFICATION
+       ========================================================================= */
+    .site-footer {
+      padding: 50px 0 42px;
+      background: #050C15;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      justify-content: space-between;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border-chrome);
+    }
+
+    @media (min-width: 860px) {
+      .footer-top {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .footer-bottom {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 860px) {
+      .footer-bottom {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    /* Sleek Toast Notification */
+    .toast-banner {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      left: 24px;
+      max-width: 420px;
+      margin-left: auto;
+      z-index: 200;
+      padding: 15px 18px;
+      border-radius: var(--radius-md);
+      background: var(--bg-elevated);
+      border: 1px solid var(--accent-cyan);
+      box-shadow: 0 22px 52px rgba(0, 0, 0, 0.78);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transform: translateY(130%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), opacity 260ms ease;
+    }
+
+    .toast-banner.show {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .toast-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .toast-body {
+      margin-top: 2px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body class="bg-grid-pattern">
+
+  <!-- ========================================================================
+       SHARED SVG DEFINITIONS FOR OFFICIAL LEGACY BOWLING ACADEMY EMBLEM
+       ======================================================================== -->
+  <svg width="0" height="0" style="position:absolute; visibility:hidden;" aria-hidden="true">
+    <defs>
+      <!-- Metallic Chrome Silver Gradient -->
+      <linearGradient id="lba-silver-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FFFFFF" />
+        <stop offset="28%" stop-color="#CBD5E1" />
+        <stop offset="52%" stop-color="#64748B" />
+        <stop offset="76%" stop-color="#E2E8F0" />
+        <stop offset="100%" stop-color="#94A3B8" />
+      </linearGradient>
+
+      <!-- Shield Navy Inner Gradient -->
+      <linearGradient id="lba-navy-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#142B47" />
+        <stop offset="55%" stop-color="#0B192C" />
+        <stop offset="100%" stop-color="#06101D" />
+      </linearGradient>
+
+      <!-- Electric Cyan Arrow Gradient -->
+      <linearGradient id="lba-cyan-arrow" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#0284C7" />
+        <stop offset="48%" stop-color="#00D4FF" />
+        <stop offset="100%" stop-color="#7DD3FC" />
+      </linearGradient>
+
+      <!-- Glowing Cyan Bowling Ball Radial Gradient -->
+      <radialGradient id="lba-ball-grad" cx="38%" cy="32%" r="65%">
+        <stop offset="0%" stop-color="#E0F7FF" />
+        <stop offset="28%" stop-color="#38BDF8" />
+        <stop offset="62%" stop-color="#0284C7" />
+        <stop offset="100%" stop-color="#082F49" />
+      </radialGradient>
+
+      <!-- Pin Metallic Gradient -->
+      <linearGradient id="lba-pin-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#94A3B8" />
+        <stop offset="35%" stop-color="#F8FAFC" />
+        <stop offset="72%" stop-color="#CBD5E1" />
+        <stop offset="100%" stop-color="#475569" />
+      </linearGradient>
+
+      <!-- Reusable Full Official Emblem Symbol -->
+      <symbol id="lba-official-emblem" viewBox="0 0 160 160">
+        <!-- Silver Laurel Leaves Left -->
+        <g fill="url(#lba-silver-grad)" opacity="0.95">
+          <path d="M27 89 C20 93, 21 101, 29 102 C27 97, 26 93, 27 89 Z" />
+          <path d="M24 101 C18 107, 22 115, 31 114 C28 110, 26 105, 24 101 Z" />
+          <path d="M29 114 C25 121, 31 128, 40 125 C36 122, 32 118, 29 114 Z" />
+          <path d="M39 125 C37 132, 44 138, 53 134 C48 132, 43 128, 39 125 Z" />
+          <path d="M51 134 C51 141, 59 145, 67 140 C61 139, 55 137, 51 134 Z" />
+          <path d="M34 99 C30 105, 32 111, 38 112 C36 107, 35 103, 34 99 Z" />
+          <path d="M40 112 C38 118, 42 123, 48 122 C45 119, 42 116, 40 112 Z" />
+        </g>
+
+        <!-- Silver Laurel Leaves Right -->
+        <g fill="url(#lba-silver-grad)" opacity="0.95">
+          <path d="M133 89 C140 93, 139 101, 131 102 C133 97, 134 93, 133 89 Z" />
+          <path d="M136 101 C142 107, 138 115, 129 114 C132 110, 134 105, 136 101 Z" />
+          <path d="M131 114 C135 121, 129 128, 120 125 C124 122, 128 118, 131 114 Z" />
+          <path d="M121 125 C123 132, 116 138, 107 134 C112 132, 117 128, 121 125 Z" />
+          <path d="M109 134 C109 141, 101 145, 93 140 C99 139, 105 137, 109 134 Z" />
+          <path d="M126 99 C130 105, 128 111, 122 112 C124 107, 125 103, 126 99 Z" />
+          <path d="M120 112 C122 118, 118 123, 112 122 C115 119, 118 116, 120 112 Z" />
+        </g>
+
+        <!-- Outer Metallic Silver Shield -->
+        <path d="M80 12 L130 30 L127 78 C124 111 104 135 80 148 C56 135 36 111 33 78 L30 30 Z"
+              fill="url(#lba-navy-grad)" stroke="url(#lba-silver-grad)" stroke-width="5.5" stroke-linejoin="round" />
+
+        <!-- Inner Electric Cyan Shield Trim -->
+        <path d="M80 21 L121 36 L118 76 C116 104 99 125 80 137 C61 125 44 104 42 76 L39 36 Z"
+              fill="none" stroke="#00D4FF" stroke-width="1.8" stroke-opacity="0.72" />
+
+        <!-- Three Silver Bowling Pins Inside Shield -->
+        <!-- Left Pin -->
+        <g>
+          <path d="M60 44 C63.5 44 65.5 46.5 65.5 49.5 C65.5 51.8 64.2 53.8 63.4 55.5 C63 56.4 63 57.5 63.8 58.6 C66.2 62.5 68.2 67.5 68.2 74 C68.2 80 66.5 85 64.5 88 L55.5 88 C53.5 85 51.8 80 51.8 74 C51.8 67.5 53.8 62.5 56.2 58.6 C57 57.5 57 56.4 56.6 55.5 C55.8 53.8 54.5 51.8 54.5 49.5 C54.5 46.5 56.5 44 60 44 Z" fill="url(#lba-pin-grad)" />
+          <rect x="55.8" y="55.5" width="8.4" height="2" rx="1" fill="#0284C7" />
+          <rect x="55.2" y="59.2" width="9.6" height="1.8" rx="0.9" fill="#00D4FF" />
+        </g>
+
+        <!-- Right Pin -->
+        <g>
+          <path d="M100 44 C103.5 44 105.5 46.5 105.5 49.5 C105.5 51.8 104.2 53.8 103.4 55.5 C103 56.4 103 57.5 103.8 58.6 C106.2 62.5 108.2 67.5 108.2 74 C108.2 80 106.5 85 104.5 88 L95.5 88 C93.5 85 91.8 80 91.8 74 C91.8 67.5 93.8 62.5 96.2 58.6 C97 57.5 97 56.4 96.6 55.5 C95.8 53.8 94.5 51.8 94.5 49.5 C94.5 46.5 96.5 44 100 44 Z" fill="url(#lba-pin-grad)" />
+          <rect x="95.8" y="55.5" width="8.4" height="2" rx="1" fill="#0284C7" />
+          <rect x="95.2" y="59.2" width="9.6" height="1.8" rx="0.9" fill="#00D4FF" />
+        </g>
+
+        <!-- Center Pin (Taller, Wearing Graduation Cap) -->
+        <g>
+          <path d="M80 41 C84 41 86.2 43.8 86.2 47.2 C86.2 49.8 84.8 52 83.8 54 C83.4 55 83.4 56.2 84.2 57.5 C87 61.8 89.2 67.5 89.2 74.8 C89.2 81.2 87.2 86.8 85 90 L75 90 C72.8 86.8 70.8 81.2 70.8 74.8 C70.8 67.5 73 61.8 75.8 57.5 C76.6 56.2 76.6 55 76.2 54 C75.2 52 73.8 49.8 73.8 47.2 C73.8 43.8 76 41 80 41 Z" fill="url(#lba-pin-grad)" />
+          <rect x="75.2" y="54.2" width="9.6" height="2.2" rx="1" fill="#0284C7" />
+          <rect x="74.4" y="58.2" width="11.2" height="2" rx="1" fill="#00D4FF" />
+          <!-- Silver Graduation Cap on Center Pin -->
+          <polygon points="80,29 96,35 80,41 64,35" fill="url(#lba-silver-grad)" stroke="#0E1B2C" stroke-width="1" />
+          <path d="M72 38.5 L72 43.5 C75 45.5 85 45.5 88 43.5 L88 38.5" fill="#CBD5E1" stroke="#0E1B2C" stroke-width="0.9" />
+          <!-- Cap Tassel -->
+          <line x1="92" y1="36.5" x2="92" y2="45.5" stroke="#E2E8F0" stroke-width="1.4" stroke-linecap="round" />
+          <circle cx="92" cy="46.5" r="1.6" fill="#00D4FF" />
+        </g>
+
+        <!-- Diagonal Electric Cyan Speed Streaks & Bold Upward-Right Arrow -->
+        <path d="M36 124 L125 35" stroke="#00D4FF" stroke-width="3.2" stroke-linecap="round" opacity="0.55" />
+        <path d="M46 134 L132 48" stroke="#0284C7" stroke-width="2.4" stroke-linecap="round" opacity="0.65" />
+        <path d="M32 132 L126 38 L114 34 L147 20 L137 54 L131 44 L44 134 Z"
+              fill="url(#lba-cyan-arrow)" stroke="#08111D" stroke-width="1.6" stroke-linejoin="round" />
+
+        <!-- Glowing Electric Cyan Bowling Ball in Foreground -->
+        <circle cx="80" cy="92" r="24" fill="#08111D" stroke="url(#lba-silver-grad)" stroke-width="2.5" />
+        <circle cx="80" cy="92" r="21.5" fill="url(#lba-ball-grad)" />
+        <!-- Ball Specular Highlight -->
+        <ellipse cx="73" cy="83" rx="6.5" ry="4" transform="rotate(-28 73 83)" fill="#FFFFFF" opacity="0.55" />
+        <!-- Finger & Thumb Holes -->
+        <circle cx="85" cy="82" r="2.5" fill="#06101D" />
+        <circle cx="91.5" cy="85.5" r="2.5" fill="#06101D" />
+        <circle cx="86" cy="91.5" r="3.1" fill="#06101D" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ========================================================================
+       1. STICKY HEADER & MOBILE DRAWER
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Official Brand Lockup -->
+      <a href="#top" class="brand-lockup" aria-label="Legacy Bowling Academy Home">
+        <svg width="46" height="46" viewBox="0 0 160 160" aria-hidden="true">
+          <use href="#lba-official-emblem"></use>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-primary metallic-silver-text">LEGACY</span>
+          <span class="brand-sub">Bowling Academy</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="#about">Our Philosophy</a>
+        <a href="#staff">Coaching Staff</a>
+        <a href="#sessions">Sessions</a>
+        <a href="#focus-check">Focus Finder</a>
+        <a href="#process">How It Works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <!-- Desktop Cyan Primary CTA -->
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-primary header-cta">Book a Session</a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button type="button" id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg id="icon-hamburger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="17" x2="20" y2="17"></line>
+        </svg>
+        <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;">
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
+      <div class="mobile-drawer-links">
+        <a href="#about" class="drawer-link"><span><span class="nav-idx">01 //</span>Our Philosophy</span><span>&rarr;</span></a>
+        <a href="#staff" class="drawer-link"><span><span class="nav-idx">01B //</span>Coaching Staff</span><span>&rarr;</span></a>
+        <a href="#sessions" class="drawer-link"><span><span class="nav-idx">02 //</span>Sessions &amp; Pricing</span><span>&rarr;</span></a>
+        <a href="#focus-check" class="drawer-link"><span><span class="nav-idx">03 //</span>Focus Finder</span><span>&rarr;</span></a>
+        <a href="#process" class="drawer-link"><span><span class="nav-idx">04 //</span>How It Works</span><span>&rarr;</span></a>
+        <a href="#faq" class="drawer-link"><span><span class="nav-idx">05 //</span>Plain-English FAQ</span><span>&rarr;</span></a>
+      </div>
+      <a href="#contact" class="btn btn-primary mobile-drawer-cta drawer-link">Book a Session</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ======================================================================
+         2. HERO SECTION
+         ====================================================================== -->
+    <section class="hero-section">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <!-- Left Hero Content -->
+        <div>
+          <div class="eyebrow-pill">
+            <span class="pulse-dot"></span>
+            ALL AGES &middot; YOUTH, ADULT &amp; SENIOR &middot; HARFORD COUNTY, MD
+          </div>
+
+          <h1 class="hero-title">
+            Elevating your game.
+            <span class="cyan-silver-gradient">Defining your legacy.</span>
+          </h1>
+
+          <p class="hero-sub">
+            Coaching for youth, adult, and senior bowlers ready to learn the finer mechanics, ask real questions, and put in the work. Improvement doesn't happen overnight&mdash;but with persistence and focus, we help you conquer the mental game and build lasting consistency.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#sessions" class="btn btn-primary">
+              <span>Explore Sessions &amp; Pricing</span>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">Book a Session</a>
+          </div>
+
+          <!-- 3 Trust Badges Strip -->
+          <div class="hero-trust-strip">
+            <div class="trust-item">
+              <span class="trust-title">All Ages Welcome</span>
+              <span class="trust-desc">Youth, Adult &amp; Senior Bowlers</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-title">USBC Certified Staff</span>
+              <span class="trust-desc">Bronze &amp; SafeSport Vetted</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-title">Mental &amp; Mechanical</span>
+              <span class="trust-desc">Finer Mechanics + Pro Shop Insight</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right-Hand Academy Identity Card with Animated Cyan Canvas -->
+        <div class="identity-card">
+          <div class="identity-canvas-stage" id="canvas-container">
+            <canvas id="academy-canvas" aria-hidden="true"></canvas>
+            <div class="identity-centerpiece">
+              <div class="identity-emblem-wrap">
+                <svg width="150" height="150" viewBox="0 0 160 160" aria-label="Legacy Bowling Academy Official Shield Emblem">
+                  <use href="#lba-official-emblem"></use>
+                </svg>
+              </div>
+              <div class="identity-wordmark-lg metallic-silver-text">LEGACY</div>
+              <div class="identity-submark">BOWLING ACADEMY</div>
+              <div class="identity-tagline">ELEVATING YOUR GAME. DEFINING YOUR LEGACY.</div>
+            </div>
+          </div>
+
+          <!-- 3-Column Bottom Metadata Strip -->
+          <div class="identity-meta-bar">
+            <div class="meta-cell">
+              <div class="meta-label">HOME CENTER</div>
+              <div class="meta-value">Forest Hill Lanes</div>
+            </div>
+            <div class="meta-cell">
+              <div class="meta-label">APPROACH</div>
+              <div class="meta-value cyan">Persistence &amp; Focus</div>
+            </div>
+            <div class="meta-cell">
+              <div class="meta-label">ORGANIZATION</div>
+              <div class="meta-value">Multi-Coach Academy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. SECTION 01 // OUR PHILOSOPHY & COACHING STAFF (#about & #staff)
+         ====================================================================== -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="eyebrow">01 // OUR PHILOSOPHY &amp; COACHING STAFF</div>
+        <h2 class="section-heading">Built for Anyone Ready to Put in the Work</h2>
+
+        <div class="story-grid">
+          <!-- Left Column: Story & Philosophy -->
+          <div class="story-copy">
+            <p>
+              Legacy Bowling Academy was founded by <strong>Scott J. Kramer</strong>, who has been on the lanes since he was four years old. Built out of a lifelong love for the sport and a deep belief in the USBC motto <strong>&ldquo;A Future for the Sport,&rdquo;</strong> the academy exists to share real, honest bowling knowledge with anyone who wants to grow.
+            </p>
+            <p>
+              We are a multi-coach team built for <strong>every bowler</strong>&mdash;not just one age group or skill level. Whether you're a youth athlete learning sound fundamentals, an adult league bowler chasing higher consistency, a senior bowler refining efficiency and comfort, or someone who simply has questions about the finer mechanics of the game, you have a place here.
+            </p>
+            <p>
+              Real progress doesn't happen overnight, and we won't sell you quick-fix gimmicks. With <strong>persistence, focus, and plain-English instruction</strong>, our coaches help you understand <em>why</em> the ball reacts the way it does, groove repeatable mechanics, and build the mental composure to execute when it matters most.
+            </p>
+          </div>
+
+          <!-- Right Column: Conquering the Mental Game Highlight Card -->
+          <div class="card mental-callout-card">
+            <div class="eyebrow">MINDSET &amp; MASTERY</div>
+            <blockquote class="mental-quote">
+              <p>Conquering the Mental Game</p>
+              <footer>Persistence &middot; Focus &middot; Frame-by-Frame Execution</footer>
+            </blockquote>
+            <ul class="callout-list">
+              <li>
+                <svg class="check-icon" width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                <span><strong>No Overnight Gimmicks:</strong> Lasting improvement comes from deliberate repetition, honest feedback, and showing up with a clear purpose.</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                <span><strong>Repeatable Pre-Shot Routines:</strong> Turn nervous league frames and stubborn single-pin spares into calm, automatic execution.</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                <span><strong>Composure Through Transition:</strong> Learn to read lane breakdown objectively instead of letting bad breaks rattle your next frame.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3 Core Pillars -->
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-idx">01 // YOUTH, ADULT &amp; SENIOR</div>
+            <h3 class="pillar-title">Tailored to Your Body, Goals &amp; Pace</h3>
+            <p class="pillar-desc">No cookie-cutter templates. We adapt mechanics, leverage, and ball speed to fit your physical comfort and personal goals at any age.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-idx">02 // PERSISTENCE &amp; MENTAL FOCUS</div>
+            <h3 class="pillar-title">Composure Without Gimmicks</h3>
+            <p class="pillar-desc">Pre-shot routines, target visualization, and staying composed through lane transition so your mental game becomes your strongest weapon.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-idx">03 // FINER MECHANICS, PLAIN ENGLISH</div>
+            <h3 class="pillar-title">Clarity + Doc's Pro Shop Synergy</h3>
+            <p class="pillar-desc">Timing, release, spare systems, and ball-motion science explained clearly&mdash;backed by direct technical collaboration with Doc's Pro Shop.</p>
+          </div>
+        </div>
+
+        <!-- Meet Our Coaching Staff (3-Card Multi-Coach Grid) -->
+        <div id="staff" class="staff-header">
+          <div class="eyebrow">THE ACADEMY ROSTER</div>
+          <h3 class="staff-subheading">Meet Our Coaching Staff</h3>
+          <p class="section-lead" style="margin-top:4px;">
+            Legacy Bowling Academy is built as a team of coaches united around one standard: transparent, USBC-certified instruction tailored to the bowler in front of us.
+          </p>
+        </div>
+
+        <div class="staff-grid">
+          <!-- Card 1: Scott J. Kramer -->
+          <article class="card coach-card featured">
+            <div>
+              <span class="coach-role-tag">Founder &amp; Lead Coach</span>
+              <h4 class="coach-name">Scott J. Kramer</h4>
+              <div class="coach-badges">
+                <span class="badge-chip cyan">USBC Bronze Certified</span>
+                <span class="badge-chip cyan">SafeSport Certified</span>
+                <span class="badge-chip">USBC ID 988-6768</span>
+              </div>
+              <p class="coach-bio">
+                On the lanes since age 4, Scott competes at a 222 average across weekly leagues and collaborates directly with Doc's Pro Shop on fit, PAP verification, and dual-angle arsenal design.
+              </p>
+            </div>
+            <div class="coach-focus-box">
+              <strong>Coaching Focus</strong>
+              Finer mechanics, mental-game routines, lane play, and equipment synergy for all ages.
+            </div>
+          </article>
+
+          <!-- Card 2: Physical & Mental Game Staff -->
+          <article class="card coach-card">
+            <div>
+              <span class="coach-role-tag">Academy Coaching Staff &middot; Expanding Roster</span>
+              <h4 class="coach-name">Physical &amp; Mental Game</h4>
+              <div class="coach-subtitle">All-Ages Mechanics &amp; Composure</div>
+              <div class="coach-badges">
+                <span class="badge-chip cyan">USBC Certified</span>
+                <span class="badge-chip">SafeSport Vetted</span>
+              </div>
+              <p class="coach-bio">
+                Focused on all-ages physical game refinement, high-percentage spare systems, and structured mental-game consistency for bowlers ready to break through scoring plateaus.
+              </p>
+            </div>
+            <div class="coach-focus-box">
+              <strong>Coaching Focus</strong>
+              Swing plane, timing checkpoints, single-pin spare mastery, and pre-shot focus.
+            </div>
+          </article>
+
+          <!-- Card 3: League, Senior & Youth Specialists -->
+          <article class="card coach-card">
+            <div>
+              <span class="coach-role-tag">Academy Coaching Staff &middot; Expanding Roster</span>
+              <h4 class="coach-name">League, Senior &amp; Youth Specialists</h4>
+              <div class="coach-subtitle">Longevity, Transition &amp; Fundamentals</div>
+              <div class="coach-badges">
+                <span class="badge-chip cyan">USBC Certified</span>
+                <span class="badge-chip">SafeSport Vetted</span>
+              </div>
+              <p class="coach-bio">
+                Dedicated to adapting mechanics for senior longevity and comfort, navigating weekly league lane transition, and building rock-solid fundamentals for next-generation bowlers.
+              </p>
+            </div>
+            <div class="coach-focus-box">
+              <strong>Coaching Focus</strong>
+              Effortless leverage, league adjustment reads, senior comfort, and youth fundamentals.
+            </div>
+          </article>
+        </div>
+
+        <!-- Slim Coach Recruiting CTA Banner -->
+        <div class="recruit-banner">
+          <div class="recruit-banner-text">
+            <h4>USBC-certified coach who shares our passion?</h4>
+            <p>Interested in coaching with Legacy Bowling Academy? We're building a collaborative team of coaches dedicated to serving bowlers of all ages.</p>
+          </div>
+          <button type="button" id="apply-to-coach-btn" class="btn btn-ghost-cyan">
+            <span>Coaching Staff Inquiry</span>
+            <span aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. SECTION 02 // WHAT EACH SESSION TAKES (#sessions)
+         ====================================================================== -->
+    <section id="sessions" class="section">
+      <div class="container">
+        <div class="eyebrow">02 // WHAT EACH SESSION TAKES</div>
+        <h2 class="section-heading">Clear Scope. Honest Pricing. Zero Fluff.</h2>
+        <p class="section-lead">
+          Select a coaching focus below to see realistic session lengths, transparent rates, and how we make sure every minute on the lanes at Forest Hill Lanes counts.
+        </p>
+
+        <!-- 4-Tab Selector -->
+        <div class="session-tabs-bar" role="tablist" aria-label="Coaching Session Types">
+          <button type="button" class="session-tab-btn active" role="tab" aria-selected="true" data-tab="mechanics">
+            <span class="tab-num">01 // FINER MECHANICS</span>
+            <span class="tab-label">Finer Mechanics &amp; 1-on-1 Coaching</span>
+          </button>
+          <button type="button" class="session-tab-btn" role="tab" aria-selected="false" data-tab="mental">
+            <span class="tab-num">02 // FOCUS &amp; STRATEGY</span>
+            <span class="tab-label">Mental Game &amp; Lane Play</span>
+          </button>
+          <button type="button" class="session-tab-btn" role="tab" aria-selected="false" data-tab="video">
+            <span class="tab-num">03 // TELEMETRY</span>
+            <span class="tab-label">Video &amp; Biomechanical Breakdown</span>
+          </button>
+          <button type="button" class="session-tab-btn" role="tab" aria-selected="false" data-tab="arsenal">
+            <span class="tab-num">04 // DOC'S PRO SHOP SYNERGY</span>
+            <span class="tab-label">Arsenal &amp; Layout Consult</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Session Panel Container -->
+        <div id="session-panel" class="card session-panel" role="tabpanel" aria-live="polite">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. SECTION 03 // INTERACTIVE FOCUS FINDER (#focus-check)
+         ====================================================================== -->
+    <section id="focus-check" class="section section-alt">
+      <div class="container">
+        <div class="eyebrow">03 // INTERACTIVE FOCUS FINDER</div>
+        <h2 class="section-heading">Find Your Starting Point</h2>
+        <p class="section-lead">
+          Not sure which session fits best? Pick your bowler profile and primary goal to get a tailored path built around steady persistence and focus.
+        </p>
+
+        <div class="diagnostic-shell">
+          <!-- Left: 2-Step Interactive Selectors -->
+          <div class="card diag-step-group">
+            <div class="diag-step-title">Step 1 // Select Bowler Profile</div>
+            <div class="diag-options-grid" id="diag-profile-group">
+              <button type="button" class="diag-option-btn selected" data-profile="youth">
+                <span>Youth / High School</span>
+                <span class="diag-radio-dot"></span>
+              </button>
+              <button type="button" class="diag-option-btn" data-profile="adult">
+                <span>Adult League / Competitive</span>
+                <span class="diag-radio-dot"></span>
+              </button>
+              <button type="button" class="diag-option-btn" data-profile="senior">
+                <span>Senior Bowler</span>
+                <span class="diag-radio-dot"></span>
+              </button>
+              <button type="button" class="diag-option-btn" data-profile="questions">
+                <span>Just Have Questions / Getting Started</span>
+                <span class="diag-radio-dot"></span>
+              </button>
+            </div>
+
+            <div class="diag-divider"></div>
+
+            <div class="diag-step-title">Step 2 // Select Primary Goal</div>
+            <div class="diag-options-grid" id="diag-goal-group">
+              <button type="button" class="diag-option-btn selected" data-goal="mental">
+                <span>Conquer the Mental Game</span>
+                <span class="diag-radio-dot"></span>
+              </button>
+              <button type="button" class="diag-option-btn" data-goal="mechanics">
+                <span>Learn the Finer Mechanics</span>
+                <span class="diag-radio-dot"></span>
+              </button>
+              <button type="button" class="diag-option-btn" data-goal="spares">
+                <span>Clean Up Spares &amp; Consistency</span>
+                <span class="diag-radio-dot"></span>
+              </button>
+              <button type="button" class="diag-option-btn" data-goal="arsenal">
+                <span>Master Lane Play &amp; Arsenal</span>
+                <span class="diag-radio-dot"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Live Dynamic Recommendation Card -->
+          <div class="card diag-result-card" aria-live="polite">
+            <div class="diag-rec-badge" id="diag-rec-badge">Recommended // Mental Game &amp; Lane Play</div>
+            <h3 class="diag-rec-title" id="diag-rec-title">Composure, Pre-Shot Routine &amp; Focus</h3>
+            <p class="diag-rec-plan" id="diag-rec-plan">
+              Improvement doesn't happen overnight—we'll build a repeatable pre-shot routine, quiet the noise between frames, and pair mental clarity with steady physical execution.
+            </p>
+            <div class="diag-rec-meta" id="diag-rec-meta">
+              <strong>Estimated Scope:</strong> 60 Minutes &middot; $60 / Session (+ Forest Hill Lanes lineage)<br />
+              <strong>Recommended Staff:</strong> Best Match / First Available Coach
+            </div>
+            <div class="diag-result-actions">
+              <button type="button" id="prefill-focus-btn" class="btn btn-primary">
+                <span>Pre-Fill Booking With This Focus</span>
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <button type="button" id="view-rec-tab-btn" class="btn btn-secondary">
+                Inspect This Session Tab Above
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. SECTION 04 // HOW IT WORKS (#process)
+         ====================================================================== -->
+    <section id="process" class="section">
+      <div class="container">
+        <div class="eyebrow">04 // HOW IT WORKS</div>
+        <h2 class="section-heading">Simple Process. Lasting Results.</h2>
+        <p class="section-lead">
+          Whether you want a full mechanical breakdown or just have a few questions about your game, getting started is straightforward.
+        </p>
+
+        <div class="process-grid">
+          <div class="card process-card">
+            <div class="process-step-tag">01 // ASK OR BOOK</div>
+            <h3>Start With Your Questions</h3>
+            <p>
+              Fill out the short inquiry form below with your age group, goals, or specific questions. We match you with the right coach on our USBC-certified team and confirm a convenient lane time at Forest Hill Lanes.
+            </p>
+          </div>
+
+          <div class="card process-card">
+            <div class="process-step-tag">02 // HIT THE LANES</div>
+            <h3>Focused, Plain-English Coaching</h3>
+            <p>
+              We watch your natural game first&mdash;never forcing a one-size-fits-all style. Together, we isolate the 1&ndash;2 highest-impact mechanical or mental-game adjustments so you leave feeling clear, not overloaded.
+            </p>
+          </div>
+
+          <div class="card process-card">
+            <div class="process-step-tag">03 // BUILD WITH PERSISTENCE</div>
+            <h3>Practice With Purpose</h3>
+            <p>
+              Real improvement takes persistence and focus. You walk away with simple drills, clear mental cues, and any pro shop surface or fit notes coordinated with Doc's Pro Shop so every practice game moves you forward.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. SECTION 05 // PLAIN-ENGLISH FAQ (#faq)
+         ====================================================================== -->
+    <section id="faq" class="section section-alt">
+      <div class="container">
+        <div class="eyebrow">05 // PLAIN-ENGLISH FAQ</div>
+        <h2 class="section-heading">Straight Answers Before You Step on the Approach</h2>
+        <p class="section-lead">
+          Honest answers to the questions we hear most from youth, adult, and senior bowlers across Harford County.
+        </p>
+
+        <div class="faq-list" id="faq-accordion">
+          <!-- FAQ 1: All Ages -->
+          <div class="faq-item open">
+            <button type="button" class="faq-trigger" aria-expanded="true">
+              <span>Who is Legacy Bowling Academy for? Do you coach adults and seniors as well as youth?</span>
+              <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              Absolutely. Legacy Bowling Academy welcomes <strong>anyone</strong> who wants to take their game to the next level&mdash;youth bowlers, high school athletes, adult league competitors, and senior bowlers alike. We tailor every lesson to your body, physical comfort, and scoring goals rather than forcing a single style.
+            </div>
+          </div>
+
+          <!-- FAQ 2: Just Asking Questions / Finer Mechanics -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>Can I book a session if I just have questions or want to understand the finer mechanics?</span>
+              <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              Yes&mdash;that's one of the best reasons to reach out. You don't need to commit to a massive lesson package or overhaul your entire game. Whether you're curious about why your ball hooks early, how to shoot corner pins more reliably, or how hand position affects roll, we're happy to sit down, hit a pair of lanes, and answer your questions in plain English.
+            </div>
+          </div>
+
+          <!-- FAQ 3: How the Mental Game is Coached -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>How do you actually coach the mental game?</span>
+              <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              We treat the mental game as a trainable skill, not vague pep talks. Together we build a repeatable pre-shot routine, a clear breathing and focus cue on the approach, and an objective decision process for lane transition&mdash;so when you leave a ringing 10-pin or miss a spare, you know exactly how to reset and execute the next frame. It doesn't happen overnight, but with persistence and focus, it sticks.
+            </div>
+          </div>
+
+          <!-- FAQ 4: Coach Matching Across the Roster -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>How does coach matching work across the Legacy Bowling Academy roster?</span>
+              <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              In the booking form below, you can request a specific coach or choose <strong>Best Match / First Available Coach</strong>. We review your profile, goals, and schedule to pair you with the USBC-certified, SafeSport-vetted coach on our team whose strengths align best with what you want to accomplish.
+            </div>
+          </div>
+
+          <!-- FAQ 5: Lane Lineage at Forest Hill Lanes -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span>Is lane lineage at Forest Hill Lanes included in the session price?</span>
+              <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              Lane lineage is paid separately directly to the front desk at <strong>Forest Hill Lanes</strong> at their standard practice, league-bowler, senior, or youth rate. Keeping lineage separate keeps our coaching pricing completely transparent and lets you take advantage of any discounts you already earn at the center.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. SECTION 06 // START A CONVERSATION (#contact)
+         ====================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="eyebrow">06 // START A CONVERSATION</div>
+        <h2 class="section-heading">Ready to Elevate Your Game?</h2>
+
+        <div class="contact-grid">
+          <!-- Left Column: Location & Contact Info -->
+          <div>
+            <p class="section-lead" style="margin-top:8px;">
+              Book a 1-on-1 session, ask a question about your game, or inquire about joining our coaching roster. We reply within one business day to match you with the right coach and confirm a lane time.
+            </p>
+
+            <div class="info-stack">
+              <div class="info-tile">
+                <div class="info-tile-label">Home Center</div>
+                <div class="info-tile-main">Forest Hill Lanes &middot; Harford County, MD</div>
+                <div class="info-tile-sub">Welcoming youth, adult, and senior bowlers from Bel Air, Forest Hill, Abingdon, Fallston &amp; Cecil County</div>
+              </div>
+
+              <div class="info-tile">
+                <div class="info-tile-label">Direct Coaching Desk</div>
+                <div class="info-tile-main">info@legacybowlingacademy.com</div>
+                <div class="info-tile-sub">Personal reply within 1 business day with flexible weekday &amp; weekend availability</div>
+              </div>
+
+              <div class="info-tile">
+                <div class="info-tile-label">Equipment &amp; Pro Shop Synergy</div>
+                <div class="info-tile-main">Partnered with Doc's Pro Shop</div>
+                <div class="info-tile-sub">Seamless alignment between your coaching notes, PAP specs, surface prep, and ball fit</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Validated Booking & Inquiry Form -->
+          <div class="card form-card">
+            <form id="booking-form" novalidate>
+              <div class="form-grid">
+                <div class="form-row-2">
+                  <div class="field-group">
+                    <label for="full-name">Full Name *</label>
+                    <input type="text" id="full-name" name="fullName" class="field-input" placeholder="e.g., Jordan Taylor" required />
+                  </div>
+                  <div class="field-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" class="field-input" placeholder="you@example.com" required />
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="field-group">
+                    <label for="age-group">Bowler Age Group *</label>
+                    <select id="age-group" name="ageGroup" class="field-input">
+                      <option value="Adult Bowler">Adult Bowler</option>
+                      <option value="Youth / High School">Youth / High School</option>
+                      <option value="Senior Bowler">Senior Bowler</option>
+                      <option value="Coach Inquiry">Coach Inquiry</option>
+                    </select>
+                  </div>
+
+                  <div class="field-group">
+                    <label for="preferred-coach">Preferred Coach</label>
+                    <select id="preferred-coach" name="preferredCoach" class="field-input">
+                      <option value="Best Match / First Available Coach" selected>Best Match / First Available Coach</option>
+                      <option value="Scott J. Kramer (Founder & Lead Coach)">Scott J. Kramer (Founder &amp; Lead Coach)</option>
+                      <option value="Academy Coaching Staff">Academy Coaching Staff</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field-group">
+                  <label for="session-focus">Session Focus *</label>
+                  <select id="session-focus" name="sessionFocus" class="field-input">
+                    <option value="Finer Mechanics & 1-on-1 Coaching">Finer Mechanics &amp; 1-on-1 Coaching</option>
+                    <option value="Mental Game & Lane Play">Mental Game &amp; Lane Play</option>
+                    <option value="Video & Biomechanical Breakdown">Video &amp; Biomechanical Breakdown</option>
+                    <option value="Arsenal & Layout Consult">Arsenal &amp; Layout Consult</option>
+                    <option value="General Questions / Getting Started">General Questions / Getting Started</option>
+                    <option value="Coaching Staff Inquiry">Coaching Staff Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="field-group">
+                  <label for="message-notes">Message, Goals &amp; Availability *</label>
+                  <textarea id="message-notes" name="messageNotes" class="field-input" placeholder="Share your approximate average (if you have one), what you'd like to work on or ask about, and days/times that work best at Forest Hill Lanes..." required></textarea>
+                </div>
+
+                <div id="form-error" class="form-error-msg" role="alert">
+                  Please enter your name, a valid email address, and a short message about your goals or questions.
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;">
+                  <span>Send Coaching Inquiry</span>
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+
+            <!-- Inline Confirmation Card -->
+            <div id="confirmation-card" class="confirmation-card" aria-live="polite">
+              <div class="confirm-badge">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                </svg>
+                Inquiry Summary Ready
+              </div>
+              <h3 style="margin-top:14px; font-size:1.3rem; font-weight:800; color:var(--text-primary);">
+                Thanks! Your message is formatted and ready to send.
+              </h3>
+              <p style="margin-top:6px; font-size:0.9rem; color:var(--text-secondary);">
+                Launch your email app to send directly to our coaching desk, or copy the formatted summary below.
+              </p>
+
+              <pre id="confirm-summary-pre" class="confirm-summary-pre"></pre>
+
+              <div class="confirm-actions">
+                <a id="mailto-launch-btn" href="#" class="btn btn-primary">Open in Email App</a>
+                <button type="button" id="copy-summary-btn" class="btn btn-secondary">Copy Summary</button>
+                <button type="button" id="reset-form-btn" class="btn btn-ghost-cyan">New Inquiry</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       9. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#top" class="brand-lockup">
+            <svg width="40" height="40" viewBox="0 0 160 160" aria-hidden="true">
+              <use href="#lba-official-emblem"></use>
+            </svg>
+            <div class="brand-text">
+              <span class="brand-primary metallic-silver-text" style="font-size:1.05rem;">LEGACY</span>
+              <span class="brand-sub">Bowling Academy</span>
+            </div>
+          </a>
+          <p style="margin-top:10px; font-family:var(--font-mono); font-size:0.74rem; letter-spacing:0.06em; color:var(--accent-sky);">
+            LEGACY BOWLING ACADEMY &mdash; Elevating Your Game. Defining Your Legacy.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#about">Our Philosophy</a>
+          <a href="#staff">Coaching Staff</a>
+          <a href="#sessions">Sessions</a>
+          <a href="#focus-check">Focus Finder</a>
+          <a href="#process">How It Works</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Book a Session</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>A trade name of Legacy Computing Services LLC &middot; Forest Hill Lanes, Harford County, MD</div>
+        <div>&copy; <span id="footer-year"></span> Legacy Computing Services LLC. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sleek Toast Notification -->
+  <div id="toast-banner" class="toast-banner" role="status" aria-live="polite">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="#00D4FF" style="flex-shrink:0; margin-top:2px;" aria-hidden="true">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+    </svg>
+    <div>
+      <div class="toast-title" id="toast-title">Updated</div>
+      <div class="toast-body" id="toast-body">Your selection has been applied.</div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       INTERACTIVE JAVASCRIPT (Self-Contained, Zero External Dependencies)
+       ======================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // Dynamic copyright year
+      const yearEl = document.getElementById('footer-year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      /* ----------------------------------------------------------------------
+         TOAST NOTIFICATION HELPER
+         ---------------------------------------------------------------------- */
+      const toastEl = document.getElementById('toast-banner');
+      const toastTitleEl = document.getElementById('toast-title');
+      const toastBodyEl = document.getElementById('toast-body');
+      let toastTimer = null;
+
+      function showToast(title, body) {
+        if (!toastEl) return;
+        toastTitleEl.textContent = title;
+        toastBodyEl.textContent = body;
+        toastEl.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toastEl.classList.remove('show');
+        }, 4200);
+      }
+
+      /* ----------------------------------------------------------------------
+         1. MOBILE DRAWER TOGGLE
+         ---------------------------------------------------------------------- */
+      const menuToggleBtn = document.getElementById('mobile-menu-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const iconHamburger = document.getElementById('icon-hamburger');
+      const iconClose = document.getElementById('icon-close');
+
+      function setDrawerState(isOpen) {
+        mobileDrawer.classList.toggle('open', isOpen);
+        menuToggleBtn.setAttribute('aria-expanded', String(isOpen));
+        iconHamburger.style.display = isOpen ? 'none' : 'block';
+        iconClose.style.display = isOpen ? 'block' : 'none';
+      }
+
+      if (menuToggleBtn && mobileDrawer) {
+        menuToggleBtn.addEventListener('click', () => {
+          setDrawerState(!mobileDrawer.classList.contains('open'));
+        });
+
+        document.querySelectorAll('.drawer-link').forEach((link) => {
+          link.addEventListener('click', () => setDrawerState(false));
+        });
+      }
+
+      /* ----------------------------------------------------------------------
+         2. ANIMATED LANE-PERSPECTIVE ELECTRIC CYAN CANVAS (HERO IDENTITY CARD)
+         ---------------------------------------------------------------------- */
+      const canvas = document.getElementById('academy-canvas');
+      const canvasContainer = document.getElementById('canvas-container');
+
+      if (canvas && canvasContainer) {
+        const ctx = canvas.getContext('2d');
+        let width = 0;
+        let height = 0;
+        let particles = [];
+        let animStarted = false;
+
+        function initParticles() {
+          particles = [];
+          const count = Math.max(20, Math.floor((width * height) / 8500));
+          for (let i = 0; i < count; i++) {
+            particles.push({
+              x: Math.random() * width,
+              y: Math.random() * height,
+              r: Math.random() * 1.9 + 0.8,
+              vx: (Math.random() - 0.5) * 0.22,
+              vy: -Math.random() * 0.32 - 0.08,
+              cyan: Math.random() > 0.4,
+              alpha: Math.random() * 0.45 + 0.2
+            });
+          }
+        }
+
+        function resizeCanvas() {
+          const rect = canvasContainer.getBoundingClientRect();
+          const dpr = Math.min(window.devicePixelRatio || 1, 2);
+          width = rect.width;
+          height = rect.height;
+          canvas.width = Math.floor(width * dpr);
+          canvas.height = Math.floor(height * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          initParticles();
+        }
+
+        function drawLanePerspective() {
+          const vanishX = width * 0.5;
+          const vanishY = height * 0.05;
+          ctx.strokeStyle = 'rgba(148, 163, 184, 0.1)';
+          ctx.lineWidth = 1;
+
+          const boardCount = 10;
+          for (let i = 0; i <= boardCount; i++) {
+            const t = i / boardCount;
+            const bottomX = width * (0.04 + t * 0.92);
+            const topX = vanishX + (bottomX - vanishX) * 0.32;
+            ctx.beginPath();
+            ctx.moveTo(bottomX, height);
+            ctx.lineTo(topX, vanishY);
+            ctx.stroke();
+          }
+
+          // Subtle Electric Cyan Targeting Arrows Row
+          const arrowY = height * 0.76;
+          ctx.fillStyle = 'rgba(0, 212, 255, 0.2)';
+          for (let j = -3; j <= 3; j++) {
+            const ax = width * 0.5 + j * (width * 0.095);
+            ctx.beginPath();
+            ctx.moveTo(ax, arrowY - 4.5);
+            ctx.lineTo(ax - 3.2, arrowY + 3.5);
+            ctx.lineTo(ax + 3.2, arrowY + 3.5);
+            ctx.closePath();
+            ctx.fill();
+          }
+        }
+
+        function animateCanvas() {
+          ctx.clearRect(0, 0, width, height);
+          drawLanePerspective();
+
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if (p.y < -8) {
+              p.y = height + 8;
+              p.x = Math.random() * width;
+            }
+            if (p.x < -8) p.x = width + 8;
+            if (p.x > width + 8) p.x = -8;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = p.cyan
+              ? `rgba(0, 212, 255, ${p.alpha})`
+              : `rgba(226, 232, 240, ${p.alpha * 0.65})`;
+            ctx.fill();
+          }
+
+          window.requestAnimationFrame(animateCanvas);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('load', () => {
+          resizeCanvas();
+          if (!animStarted) {
+            animStarted = true;
+            animateCanvas();
+          }
+        });
+        resizeCanvas();
+        if (!animStarted) {
+          animStarted = true;
+          animateCanvas();
+        }
+      }
+
+      /* ----------------------------------------------------------------------
+         3. SECTION 02 // INTERACTIVE 4-TAB SESSION SCOPE
+         ---------------------------------------------------------------------- */
+      const sessionData = {
+        mechanics: {
+          eyebrow: '01 // FINER MECHANICS & 1-ON-1 COACHING',
+          title: 'Finer Mechanics & 1-on-1 Coaching',
+          duration: '60 Minutes',
+          price: '$60 / Session (+ Forest Hill Lanes lineage)',
+          straightTalkTitle: 'STRAIGHT TALK // WHEN TO SAVE YOUR MONEY',
+          straightTalk: "Don't lock yourself into a giant lesson bundle before we see your natural game. Real mechanical progress doesn't happen overnight—one focused session with 1–2 clear drills and persistent practice beats ten rushed tips every time.",
+          bring: [
+            'Your strike and spare ball (or house equipment if you are just getting started)',
+            'Comfortable bowling shoes and any wrist support or tape you normally use',
+            'Any specific questions about footwork, timing, swing plane, release, or spares'
+          ],
+          standards: [
+            'Tailored to youth, adult, and senior physical comfort—no forced templates',
+            'Plain-English cues covering stance, pushaway timing, leverage, and spare targeting',
+            'Written practice plan so your persistence between lessons pays off'
+          ],
+          formValue: 'Finer Mechanics & 1-on-1 Coaching'
+        },
+        mental: {
+          eyebrow: '02 // MENTAL GAME & LANE PLAY',
+          title: 'Mental Game & Lane Play',
+          duration: '60 Minutes',
+          price: '$60 / Session (+ Forest Hill Lanes lineage)',
+          straightTalkTitle: 'STRAIGHT TALK // WHEN TO SAVE YOUR MONEY',
+          straightTalk: "If you already throw a clean shot in practice but tighten up on league night or unravel after a bad break, another new bowling ball won't fix it. Conquering the mental game and learning to read transition objectively is where real scoring jumps happen.",
+          bring: [
+            'Your primary league balls so we can practice real-time lane adjustments',
+            'Notes on the situations that rattle you most (10th frames, single pins, carry-down)',
+            'An open mindset ready to build a calm, repeatable pre-shot routine'
+          ],
+          standards: [
+            'Structured pre-shot routine design—breath, visual target, and commitment cue',
+            'Frame-by-frame reset framework to shake off splits and ringing corner pins',
+            'Objective lane-transition reads so you know when to move vs. change balls'
+          ],
+          formValue: 'Mental Game & Lane Play'
+        },
+        video: {
+          eyebrow: '03 // VIDEO & BIOMECHANICAL BREAKDOWN',
+          title: 'Video & Biomechanical Breakdown',
+          duration: '60–75 Minutes',
+          price: '$75 / Session (+ Forest Hill Lanes lineage)',
+          straightTalkTitle: 'STRAIGHT TALK // WHEN TO SAVE YOUR MONEY',
+          straightTalk: "If you're brand new to the lanes, start with a standard 1-on-1 mechanics session first. Video telemetry shines once you have a repeatable approach and want frame-by-frame proof of timing, PAP, and speed-to-rev balance.",
+          bring: [
+            '2–3 of your most-used bowling balls to compare axis rotation and roll',
+            'Bowling shoes and readiness to throw 15–20 baseline shots',
+            'Email address so we can deliver your annotated slow-motion takeaway clips'
+          ],
+          standards: [
+            'Multi-angle high-frame-rate rear and side video capture on Forest Hill Lanes',
+            'PAP verification, timing checkpoint audit, and rev/speed matching review',
+            'Clear written takeaways and annotated clips you can reference during practice'
+          ],
+          formValue: 'Video & Biomechanical Breakdown'
+        },
+        arsenal: {
+          eyebrow: '04 // ARSENAL & LAYOUT CONSULT',
+          title: 'Arsenal & Layout Consult',
+          duration: '45–60 Minutes',
+          price: '$60 / Session (+ Forest Hill Lanes lineage)',
+          straightTalkTitle: 'STRAIGHT TALK // WHEN TO SAVE YOUR MONEY',
+          straightTalk: "Before buying the newest shiny release, let's test your current bag on the lanes first. Often a simple surface pad adjustment or minor grip tweak—coordinated directly with Doc's Pro Shop—solves what bowlers think requires a $250 ball.",
+          bring: [
+            'Your current bowling bag / full league or tournament arsenal',
+            'Notes on which lane conditions or patterns give you the biggest headache',
+            'Any existing PAP or layout sheet (we verify live on the lanes)'
+          ],
+          standards: [
+            'On-lane ball reaction audit mapping coverstock strength, core shape, and surface grit',
+            'True bag-gap analysis so every ball in your bag earns its spot',
+            'Direct technical handoff & dual-angle layout specs ready for Doc\'s Pro Shop'
+          ],
+          formValue: 'Arsenal & Layout Consult'
+        }
+      };
+
+      const checkSvg = `<svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>`;
+      const sessionPanel = document.getElementById('session-panel');
+      const tabButtons = document.querySelectorAll('.session-tab-btn');
+
+      function renderSessionTab(tabKey) {
+        const data = sessionData[tabKey];
+        if (!data || !sessionPanel) return;
+
+        tabButtons.forEach((btn) => {
+          const isActive = btn.dataset.tab === tabKey;
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-selected', String(isActive));
+        });
+
+        sessionPanel.innerHTML = `
+          <div class="session-panel-top">
+            <div>
+              <div class="eyebrow">${data.eyebrow}</div>
+              <h3 class="session-panel-title">${data.title}</h3>
+              <div class="session-meta-pills">
+                <div class="session-stat">
+                  <div class="session-stat-label">Realistic Duration</div>
+                  <div class="session-stat-val">${data.duration}</div>
+                </div>
+                <div class="session-stat">
+                  <div class="session-stat-label">Transparent Rate</div>
+                  <div class="session-stat-val">${data.price}</div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-book-session="${data.formValue}">
+              <span>Request This Session</span>
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+          </div>
+
+          <div class="straight-talk-box">
+            <div class="straight-talk-label">${data.straightTalkTitle}</div>
+            <p>${data.straightTalk}</p>
+          </div>
+
+          <div class="session-checklists">
+            <div class="checklist-col">
+              <h4>What We Need From You</h4>
+              <ul>
+                ${data.bring.map((item) => `<li>${checkSvg}<span>${item}</span></li>`).join('')}
+              </ul>
+            </div>
+            <div class="checklist-col">
+              <h4>Under-the-Hood Coaching Standards</h4>
+              <ul>
+                ${data.standards.map((item) => `<li>${checkSvg}<span>${item}</span></li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        `;
+
+        const bookBtn = sessionPanel.querySelector('[data-book-session]');
+        if (bookBtn) {
+          bookBtn.addEventListener('click', () => {
+            prefillBookingForm({
+              sessionFocus: data.formValue,
+              preferredCoach: 'Best Match / First Available Coach'
+            });
+            showToast('Session Selected', `Form pre-set to "${data.formValue}".`);
+          });
+        }
+      }
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener('click', () => renderSessionTab(btn.dataset.tab));
+      });
+
+      renderSessionTab('mechanics');
+
+      /* ----------------------------------------------------------------------
+         4. SECTION 03 // INTERACTIVE FOCUS FINDER
+         ---------------------------------------------------------------------- */
+      let selectedProfile = 'youth';
+      let selectedGoal = 'mental';
+
+      const profileLabels = {
+        youth: 'Youth / High School',
+        adult: 'Adult League / Competitive',
+        senior: 'Senior Bowler',
+        questions: 'Just Have Questions / Getting Started'
+      };
+
+      const profileToAgeGroup = {
+        youth: 'Youth / High School',
+        adult: 'Adult Bowler',
+        senior: 'Senior Bowler',
+        questions: 'Adult Bowler'
+      };
+
+      const goalLabels = {
+        mental: 'Conquer the Mental Game',
+        mechanics: 'Learn the Finer Mechanics',
+        spares: 'Clean Up Spares & Consistency',
+        arsenal: 'Master Lane Play & Arsenal'
+      };
+
+      const recBadgeEl = document.getElementById('diag-rec-badge');
+      const recTitleEl = document.getElementById('diag-rec-title');
+      const recPlanEl = document.getElementById('diag-rec-plan');
+      const recMetaEl = document.getElementById('diag-rec-meta');
+      let currentRec = null;
+
+      function computeFocusRecommendation(profile, goal) {
+        if (goal === 'mental') {
+          return {
+            tabKey: 'mental',
+            sessionLabel: 'Mental Game & Lane Play',
+            title: profile === 'senior'
+              ? 'Calm Composure & Confident Frame-by-Frame Focus'
+              : 'Pre-Shot Routine & Mental Game Mastery',
+            plan: "Real mental toughness doesn't happen overnight—with persistence and focus, we'll establish a repeatable pre-shot routine, quiet distractions between frames, and give you a clear reset plan whenever the lanes get tricky.",
+            meta: '<strong>Estimated Scope:</strong> 60 Minutes &middot; $60 / Session (+ Forest Hill Lanes lineage)<br /><strong>Coaching Match:</strong> Physical &amp; Mental Game Staff or Lead Coach'
+          };
+        }
+
+        if (goal === 'arsenal') {
+          return {
+            tabKey: 'arsenal',
+            sessionLabel: 'Arsenal & Layout Consult',
+            title: profile === 'questions'
+              ? 'Plain-English Equipment & Lane-Play Q&A'
+              : 'Lane Transition Strategy & Arsenal Gap Audit',
+            plan: "We'll evaluate your current equipment on Forest Hill Lanes, explain how coverstocks and surface grit shape ball motion, and coordinate directly with Doc's Pro Shop so every ball in your bag has a clear job.",
+            meta: '<strong>Estimated Scope:</strong> 45–60 Minutes &middot; $60 / Session (+ lineage)<br /><strong>Coaching Match:</strong> Scott J. Kramer or Academy Staff'
+          };
+        }
+
+        if (goal === 'mechanics' && (profile === 'adult' || profile === 'senior')) {
+          return {
+            tabKey: 'video',
+            sessionLabel: 'Video & Biomechanical Breakdown',
+            title: profile === 'senior'
+              ? 'Effortless Leverage & Mechanical Efficiency Review'
+              : 'Finer Mechanics & Frame-by-Frame Release Blueprint',
+            plan: profile === 'senior'
+              ? "We'll use slow-motion video to maximize smooth timing and effortless leverage—protecting your comfort while sharpening accuracy and pin carry through persistent, focused drills."
+              : "Seeing your swing plane, timing, and release frame by frame removes guesswork. We'll isolate the 1–2 finer mechanical adjustments that unlock consistency and send you home with annotated clips.",
+            meta: '<strong>Estimated Scope:</strong> 60–75 Minutes &middot; $75 / Session (+ lineage)<br /><strong>Coaching Match:</strong> Best Match / First Available Coach'
+          };
+        }
+
+        return {
+          tabKey: 'mechanics',
+          sessionLabel: profile === 'questions' ? 'General Questions / Getting Started' : 'Finer Mechanics & 1-on-1 Coaching',
+          title: goal === 'spares'
+            ? 'High-Percentage Spare System & Repeatability'
+            : 'Finer Mechanics & Foundational Q&A',
+          plan: goal === 'spares'
+            ? "Picking up single-pin spares is the fastest, most reliable way to raise your average. With persistence and focus, we'll lock in a clean visual spare system and steady approach balance."
+            : "No pressure and no jargon—we'll answer your questions on the lanes, examine your natural timing and release, and give you 1–2 practical drills you can groove at your own pace.",
+          meta: '<strong>Estimated Scope:</strong> 60 Minutes &middot; $60 / Session (+ Forest Hill Lanes lineage)<br /><strong>Coaching Match:</strong> Best Match / First Available Coach'
+        };
+      }
+
+      function updateDiagnosticUI() {
+        currentRec = computeFocusRecommendation(selectedProfile, selectedGoal);
+        recBadgeEl.textContent = `Recommended // ${currentRec.sessionLabel}`;
+        recTitleEl.textContent = currentRec.title;
+        recPlanEl.textContent = currentRec.plan;
+        recMetaEl.innerHTML = currentRec.meta;
+      }
+
+      document.querySelectorAll('#diag-profile-group .diag-option-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#diag-profile-group .diag-option-btn').forEach((b) => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          selectedProfile = btn.dataset.profile;
+          updateDiagnosticUI();
+        });
+      });
+
+      document.querySelectorAll('#diag-goal-group .diag-option-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#diag-goal-group .diag-option-btn').forEach((b) => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          selectedGoal = btn.dataset.goal;
+          updateDiagnosticUI();
+        });
+      });
+
+      updateDiagnosticUI();
+
+      const viewRecTabBtn = document.getElementById('view-rec-tab-btn');
+      if (viewRecTabBtn) {
+        viewRecTabBtn.addEventListener('click', () => {
+          if (!currentRec) return;
+          renderSessionTab(currentRec.tabKey);
+          document.getElementById('sessions').scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+
+      const prefillFocusBtn = document.getElementById('prefill-focus-btn');
+      if (prefillFocusBtn) {
+        prefillFocusBtn.addEventListener('click', () => {
+          if (!currentRec) return;
+          const noteText = `Focus Finder Selection:\n- Bowler Profile: ${profileLabels[selectedProfile]}\n- Primary Goal: ${goalLabels[selectedGoal]}\n- Suggested Path: ${currentRec.title}\n\nPreferred days/times at Forest Hill Lanes: `;
+          prefillBookingForm({
+            ageGroup: profileToAgeGroup[selectedProfile],
+            sessionFocus: currentRec.sessionLabel,
+            preferredCoach: 'Best Match / First Available Coach',
+            message: noteText
+          });
+          showToast('Booking Pre-Filled', `Added your "${currentRec.sessionLabel}" focus details below.`);
+        });
+      }
+
+      /* ----------------------------------------------------------------------
+         5. FORM PREFILL HELPER & APPLY TO COACH BUTTON
+         ---------------------------------------------------------------------- */
+      const bookingForm = document.getElementById('booking-form');
+      const confirmationCard = document.getElementById('confirmation-card');
+      const ageGroupSelect = document.getElementById('age-group');
+      const coachSelect = document.getElementById('preferred-coach');
+      const sessionFocusSelect = document.getElementById('session-focus');
+      const messageTextarea = document.getElementById('message-notes');
+
+      function prefillBookingForm(opts) {
+        if (bookingForm && confirmationCard) {
+          bookingForm.style.display = 'block';
+          confirmationCard.classList.remove('visible');
+        }
+        if (opts.ageGroup && ageGroupSelect) ageGroupSelect.value = opts.ageGroup;
+        if (opts.preferredCoach && coachSelect) coachSelect.value = opts.preferredCoach;
+        if (opts.sessionFocus && sessionFocusSelect) sessionFocusSelect.value = opts.sessionFocus;
+        if (typeof opts.message === 'string' && messageTextarea) messageTextarea.value = opts.message;
+
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        setTimeout(() => {
+          const nameInput = document.getElementById('full-name');
+          if (nameInput) nameInput.focus({ preventScroll: true });
+        }, 420);
+      }
+
+      const applyCoachBtn = document.getElementById('apply-to-coach-btn');
+      if (applyCoachBtn) {
+        applyCoachBtn.addEventListener('click', () => {
+          prefillBookingForm({
+            ageGroup: 'Coach Inquiry',
+            preferredCoach: 'Scott J. Kramer (Founder & Lead Coach)',
+            sessionFocus: 'Coaching Staff Inquiry',
+            message: 'Coaching Staff Inquiry:\n- USBC Certification Level: \n- SafeSport Status: \n- Specialties / Experience (Youth, Adult, Senior, Mental Game, Video): '
+          });
+          showToast('Coaching Inquiry Ready', 'Form set to "Coaching Staff Inquiry".');
+        });
+      }
+
+      /* ----------------------------------------------------------------------
+         6. SECTION 05 // PLAIN-ENGLISH FAQ ACCORDION
+         ---------------------------------------------------------------------- */
+      const faqItems = document.querySelectorAll('#faq-accordion .faq-item');
+      faqItems.forEach((item) => {
+        const trigger = item.querySelector('.faq-trigger');
+        trigger.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+          faqItems.forEach((other) => {
+            other.classList.remove('open');
+            other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            item.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      /* ----------------------------------------------------------------------
+         7. SECTION 06 // VALIDATED FORM, CONFIRMATION, MAILTO & CLIPBOARD COPY
+         ---------------------------------------------------------------------- */
+      const formErrorEl = document.getElementById('form-error');
+      const confirmSummaryPre = document.getElementById('confirm-summary-pre');
+      const mailtoLaunchBtn = document.getElementById('mailto-launch-btn');
+      const copySummaryBtn = document.getElementById('copy-summary-btn');
+      const resetFormBtn = document.getElementById('reset-form-btn');
+
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const fullName = document.getElementById('full-name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const ageGroup = ageGroupSelect.value;
+          const preferredCoach = coachSelect.value;
+          const sessionFocus = sessionFocusSelect.value;
+          const messageNotes = messageTextarea.value.trim();
+
+          const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+          if (!fullName || !isEmailValid || !messageNotes) {
+            formErrorEl.classList.add('visible');
+            return;
+          }
+
+          formErrorEl.classList.remove('visible');
+
+          const summaryText = [
+            'LEGACY BOWLING ACADEMY — COACHING INQUIRY',
+            '=========================================',
+            `Name:            ${fullName}`,
+            `Email:           ${email}`,
+            `Age Group:       ${ageGroup}`,
+            `Preferred Coach: ${preferredCoach}`,
+            `Session Focus:   ${sessionFocus}`,
+            'Home Center:     Forest Hill Lanes (Harford County, MD)',
+            '',
+            'Message & Availability:',
+            messageNotes
+          ].join('\n');
+
+          confirmSummaryPre.textContent = summaryText;
+
+          const subject = encodeURIComponent(`Legacy Bowling Academy: ${sessionFocus} (${fullName})`);
+          const body = encodeURIComponent(summaryText);
+          mailtoLaunchBtn.href = `mailto:info@legacybowlingacademy.com?subject=${subject}&body=${body}`;
+
+          bookingForm.style.display = 'none';
+          confirmationCard.classList.add('visible');
+          showToast('Inquiry Ready', 'Click "Open in Email App" or copy your formatted summary below.');
+        });
+      }
+
+      if (copySummaryBtn) {
+        copySummaryBtn.addEventListener('click', () => {
+          const textToCopy = confirmSummaryPre.textContent;
+          const tempArea = document.createElement('textarea');
+          tempArea.value = textToCopy;
+          tempArea.style.position = 'fixed';
+          tempArea.style.opacity = '0';
+          document.body.appendChild(tempArea);
+          tempArea.select();
+          try {
+            document.execCommand('copy');
+            showToast('Copied to Clipboard', 'Your formatted inquiry summary has been copied.');
+          } catch (err) {
+            showToast('Manual Copy', 'Please select and copy the summary text above.');
+          } finally {
+            document.body.removeChild(tempArea);
+          }
+        });
+      }
+
+      if (resetFormBtn) {
+        resetFormBtn.addEventListener('click', () => {
+          bookingForm.reset();
+          confirmationCard.classList.remove('visible');
+          bookingForm.style.display = 'block';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
