@@ -1394,7 +1394,7 @@
 
     @media (min-width: 900px) {
       .staff-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1.18fr 0.82fr;
       }
     }
 
@@ -1408,6 +1408,30 @@
     .coach-card.featured {
       border-color: var(--border-cyan);
       box-shadow: var(--shadow-panel), var(--shadow-cyber-cyan);
+    }
+
+    .coach-card.expanding {
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px dashed rgba(100, 116, 139, 0.55);
+      box-shadow: none;
+    }
+
+    .coach-card.expanding:hover {
+      border-color: rgba(56, 189, 248, 0.55);
+      box-shadow: var(--shadow-panel-hover);
+    }
+
+    .expanding-focus-list {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .coach-card-cta {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-slate);
     }
 
     .coach-role-tag {
@@ -2538,7 +2562,7 @@
         <a href="#sessions">What It Takes</a>
         <a href="#programs">Programs</a>
         <a href="#about">Our Ethos</a>
-        <a href="#staff">Coaching Staff</a>
+        <a href="#staff">Coach</a>
         <a href="#focus-check" class="nav-wide">Focus Finder</a>
         <a href="#process" class="nav-wide">How It Works</a>
         <a href="#faq">FAQ</a>
@@ -2567,7 +2591,7 @@
         <a href="#sessions" class="drawer-link"><span><span class="nav-idx">01 //</span>What Each Session Takes</span><span>&rarr;</span></a>
         <a href="#programs" class="drawer-link"><span><span class="nav-idx">02 //</span>Clinics, Camps &amp; Youth</span><span>&rarr;</span></a>
         <a href="#about" class="drawer-link"><span><span class="nav-idx">03 //</span>Our Ethos</span><span>&rarr;</span></a>
-        <a href="#staff" class="drawer-link"><span><span class="nav-idx">04 //</span>Coaching Staff</span><span>&rarr;</span></a>
+        <a href="#staff" class="drawer-link"><span><span class="nav-idx">04 //</span>Meet Your Coach</span><span>&rarr;</span></a>
         <a href="#focus-check" class="drawer-link"><span><span class="nav-idx">05 //</span>Focus Finder</span><span>&rarr;</span></a>
         <a href="#process" class="drawer-link"><span><span class="nav-idx">06 //</span>How It Works</span><span>&rarr;</span></a>
         <a href="#faq" class="drawer-link"><span><span class="nav-idx">07 //</span>FAQ</span><span>&rarr;</span></a>
@@ -2702,12 +2726,12 @@
               <span class="spec-val">Forest Hill Lanes</span>
             </div>
             <div class="spec-row">
-              <span class="spec-label">APPROACH</span>
-              <span class="spec-val sky">Persistence &amp; Focus</span>
+              <span class="spec-label">LEAD COACH</span>
+              <span class="spec-val sky">Scott J. Kramer</span>
             </div>
             <div class="spec-row">
-              <span class="spec-label">ORGANIZATION</span>
-              <span class="spec-val emerald">Multi-Coach Academy</span>
+              <span class="spec-label">APPROACH</span>
+              <span class="spec-val emerald">Persistence &amp; Focus</span>
             </div>
           </div>
         </div>
@@ -2866,16 +2890,16 @@
             Legacy Bowling Academy was founded by <strong>Scott J. Kramer</strong>, who has been on the lanes since he was four years old. Built out of a lifelong love for the sport and a deep belief in the USBC motto <strong>&ldquo;A Future for the Sport,&rdquo;</strong> the academy exists to share real, honest bowling knowledge with anyone ready to put in the work.
           </p>
           <p>
-            We are a multi-coach team built for <strong>every bowler</strong>&mdash;not just one age group or skill level. Whether you're a youth athlete learning sound fundamentals, an adult league competitor chasing higher consistency, a senior bowler refining effortless leverage, or someone who simply has questions about the game, you have a place here.
+            Legacy Bowling Academy is built for <strong>every bowler</strong>&mdash;not just one age group or skill level. Today every session is led directly by Scott, with plans to expand into a collaborative roster of USBC-certified coaches as the academy grows. Whether you're a youth athlete learning sound fundamentals, an adult league competitor chasing higher consistency, a senior bowler refining effortless leverage, or someone who simply has questions about the game, you have a place here.
           </p>
         </div>
 
-        <!-- Meet Our Coaching Staff -->
+        <!-- Meet Your Coach & Expanding Roster -->
         <div id="staff" class="staff-header">
-          <div class="eyebrow">THE ACADEMY ROSTER</div>
-          <h3 class="staff-subheading">Meet Our Coaching Staff</h3>
+          <div class="eyebrow">COACHING LEADERSHIP</div>
+          <h3 class="staff-subheading">Meet Your Coach</h3>
           <p class="section-lead" style="margin-top:8px;">
-            Instruction is USBC-certified and matched to the bowler in front of us. Scott is on the roster now. Additional coaches are listed when their names and credentials are ready to publish.
+            Right now, all lessons are coached personally by founder Scott J. Kramer. As the academy grows at Forest Hill Lanes, additional USBC-certified, SafeSport-vetted coaches will be added here.
           </p>
         </div>
 
@@ -2891,78 +2915,38 @@
                 <span class="badge-chip">USBC ID 988-6768</span>
               </div>
               <p class="coach-bio">
-                On the lanes since age 4, Scott competes at a 222 average across weekly leagues and collaborates directly with Doc's Pro Shop on fit, PAP verification, and dual-angle arsenal design.
-              </p>
-              <p class="placeholder-note" id="placeholder-scott-certs">
-                <strong>Placeholder &mdash; add the real details before relying on this page</strong>
-                Any other credential you want public: additional USBC levels, coaching-course names, the year coaching started, or league and youth affiliations. Nothing else is listed because it was not already on this page.
+                On the lanes since age 4, Scott competes at a 222 average across weekly leagues and collaborates directly with Doc's Pro Shop on fit, PAP verification, and dual-angle arsenal design. Every lesson is delivered in plain English, tailored to the bowler in front of him&mdash;never forced into a cookie-cutter template.
               </p>
             </div>
             <div class="coach-focus-box">
               <strong>Coaching Focus</strong>
-              Finer mechanics, mental-game routines, lane play, and equipment synergy for all ages.
+              Finer mechanics, mental-game routines, single-pin spare systems, lane play, and unbiased equipment synergy for youth, adult, and senior bowlers.
             </div>
           </article>
 
-          <!-- Card 2: Physical & Mental Game Staff -->
-          <article class="cyber-panel cyber-panel-hover coach-card">
+          <!-- Card 2: Future Coaching Staff Expansion -->
+          <article class="cyber-panel cyber-panel-hover coach-card expanding">
             <div>
-              <span class="coach-role-tag">Academy Coaching Staff &middot; Expanding Roster</span>
-              <h4 class="coach-name">Physical &amp; Mental Game</h4>
-              <div class="coach-subtitle">All-Ages Mechanics &amp; Composure</div>
-              <div class="coach-badges">
+              <span class="coach-role-tag">Growing the Roster</span>
+              <h4 class="coach-name">Expanding Our Coaching Staff</h4>
+              <div class="coach-subtitle">Future Academy Coaches &middot; Harford County, MD</div>
+              <p class="coach-bio">
+                Scott leads all academy instruction today, and we're looking ahead to building a collaborative team of USBC-certified, SafeSport-vetted coaches who share a plain-English, bowler-first approach.
+              </p>
+              <div class="expanding-focus-list">
                 <span class="badge-chip cyan">USBC Certified</span>
                 <span class="badge-chip emerald">SafeSport Vetted</span>
+                <span class="badge-chip">Youth &amp; High School</span>
+                <span class="badge-chip">Adult &amp; Senior</span>
               </div>
-              <p class="coach-bio">
-                Focused on all-ages physical game refinement, high-percentage spare systems, and structured mental-game consistency for bowlers ready to break through scoring plateaus.
-              </p>
-              <p class="placeholder-note" id="placeholder-staff-mechanics">
-                <strong>Placeholder &mdash; add the real details before relying on this page</strong>
-                This card is a role, not a person. Add the coach's name, USBC certification level, SafeSport status, and a short bio when you are ready to publish them.
-              </p>
             </div>
-            <div class="coach-focus-box">
-              <strong>Coaching Focus</strong>
-              Swing plane, timing checkpoints, single-pin spare mastery, and pre-shot focus.
+            <div class="coach-card-cta">
+              <button type="button" id="apply-to-coach-btn" class="btn btn-ghost-cyan btn-block">
+                <span>Interested in Coaching? Inquire</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
             </div>
           </article>
-
-          <!-- Card 3: League, Senior & Youth Specialists -->
-          <article class="cyber-panel cyber-panel-hover coach-card">
-            <div>
-              <span class="coach-role-tag">Academy Coaching Staff &middot; Expanding Roster</span>
-              <h4 class="coach-name">League, Senior &amp; Youth Specialists</h4>
-              <div class="coach-subtitle">Longevity, Transition &amp; Fundamentals</div>
-              <div class="coach-badges">
-                <span class="badge-chip cyan">USBC Certified</span>
-                <span class="badge-chip emerald">SafeSport Vetted</span>
-              </div>
-              <p class="coach-bio">
-                Dedicated to adapting mechanics for senior longevity and comfort, navigating weekly league lane transition, and building rock-solid fundamentals for next-generation bowlers.
-              </p>
-              <p class="placeholder-note" id="placeholder-staff-league">
-                <strong>Placeholder &mdash; add the real details before relying on this page</strong>
-                This card is a role, not a person. Add the coach's name, USBC certification level, SafeSport status, and a short bio when you are ready to publish them.
-              </p>
-            </div>
-            <div class="coach-focus-box">
-              <strong>Coaching Focus</strong>
-              Effortless leverage, league adjustment reads, senior comfort, and youth fundamentals.
-            </div>
-          </article>
-        </div>
-
-        <!-- Coach Recruiting CTA Banner -->
-        <div class="cyber-panel callout-bar">
-          <div>
-            <h4>USBC-certified coach who shares our passion?</h4>
-            <p>Interested in coaching with Legacy Bowling Academy? We're building a collaborative team of coaches dedicated to serving bowlers of all ages.</p>
-          </div>
-          <button type="button" id="apply-to-coach-btn" class="btn btn-ghost-cyan">
-            <span>Coaching Staff Inquiry</span>
-            <span aria-hidden="true">&rarr;</span>
-          </button>
         </div>
       </div>
     </section>
@@ -3040,7 +3024,7 @@
                 Real mental toughness doesn't happen overnight&mdash;with persistence and focus, we'll establish a repeatable pre-shot routine, quiet distractions between frames, and give you a clear reset plan whenever the lanes get tricky.
               </p>
               <div class="diag-rec-meta" id="diag-rec-meta">
-                <strong>Estimated Scope:</strong> 60 minutes &middot; $60 / session, plus the lane fee at Forest Hill Lanes &middot; <strong>Coaching Match:</strong> Best Match / First Available Coach
+                <strong>Estimated Scope:</strong> 60 minutes &middot; $60 / session, plus the lane fee at Forest Hill Lanes &middot; <strong>Coach:</strong> Scott J. Kramer
               </div>
             </div>
             <div class="diag-result-actions">
@@ -3073,7 +3057,7 @@
             <div class="process-step-tag">STEP 01</div>
             <h3>Start With Your Questions</h3>
             <p>
-              Fill out the booking form below with your age group, program, and the times that work. We match you with the right coach on our USBC-certified team and confirm a lane time at Forest Hill Lanes.
+              Fill out the booking form below with your age group, program, and the times that work. Scott reviews your goals and schedule personally and confirms a lane time at Forest Hill Lanes.
             </p>
           </div>
 
@@ -3194,13 +3178,13 @@
 
           <div class="faq-item">
             <button type="button" class="faq-trigger" aria-expanded="false">
-              <span>How does coach matching work across the Legacy Bowling Academy roster?</span>
+              <span>Who will I be working with during my lessons? Are you adding more coaches?</span>
               <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
               </svg>
             </button>
             <div class="faq-content">
-              In the booking form below, you can request a specific coach or choose <strong>Best Match / First Available Coach</strong>. We review your profile, goals, and schedule to pair you with the USBC-certified, SafeSport-vetted coach on our team whose strengths align best with what you want to accomplish.
+              Right now, all lessons are coached directly by founder <strong>Scott J. Kramer</strong> (USBC Bronze &amp; SafeSport certified). As the academy grows at Forest Hill Lanes, we plan to expand the roster with additional USBC-certified, SafeSport-vetted coaches. If you're a certified coach interested in joining, reach out through the inquiry form below.
             </div>
           </div>
 
@@ -3403,11 +3387,10 @@
                     </select>
                   </div>
                   <div class="field-group">
-                    <label for="preferred-coach">Preferred coach</label>
+                    <label for="preferred-coach">Coach</label>
                     <select id="preferred-coach" name="preferredCoach" class="field-input">
-                      <option value="Best Match / First Available Coach" selected>Best match / first available</option>
-                      <option value="Scott J. Kramer (Founder &amp; Lead Coach)">Scott J. Kramer</option>
-                      <option value="Academy Coaching Staff">Academy coaching staff</option>
+                      <option value="Scott J. Kramer (Founder &amp; Lead Coach)" selected>Scott J. Kramer (Lead Coach)</option>
+                      <option value="Best Match / First Available Coach">First available (as roster expands)</option>
                     </select>
                   </div>
                 </div>
@@ -3506,7 +3489,7 @@
             <a href="#sessions">What Each Session Takes</a>
             <a href="#programs">Clinics, Camps &amp; Youth</a>
             <a href="#about">Founder Philosophy</a>
-            <a href="#staff">Coaching Staff</a>
+            <a href="#staff">Meet Your Coach</a>
             <a href="#focus-check">Focus Finder</a>
             <a href="#faq">FAQ</a>
             <a href="#pay">Book &amp; Pay</a>
@@ -3945,7 +3928,7 @@
               form: 'booking',
               program: 'private lesson',
               sessionFocus: data.formValue,
-              preferredCoach: 'Best Match / First Available Coach',
+              preferredCoach: 'Scott J. Kramer (Founder & Lead Coach)',
               goals: data.formValue
             });
             showToast('Session Selected', `Form pre-set to "${data.formValue}".`);
@@ -4001,7 +3984,7 @@
               ? 'Calm Composure & Confident Frame-by-Frame Focus'
               : 'Pre-Shot Routine & Mental Game Mastery',
             plan: "Real mental toughness doesn't happen overnight—with persistence and focus, we'll establish a repeatable pre-shot routine, quiet distractions between frames, and give you a clear reset plan whenever the lanes get tricky.",
-            meta: '<strong>Estimated Scope:</strong> 60 Minutes &middot; $60 / session, plus the lane fee at Forest Hill Lanes &middot; <strong>Coaching Match:</strong> Physical &amp; Mental Game Staff or Lead Coach'
+            meta: '<strong>Estimated Scope:</strong> 60 Minutes &middot; $60 / session, plus the lane fee at Forest Hill Lanes &middot; <strong>Coach:</strong> Scott J. Kramer'
           };
         }
 
@@ -4013,7 +3996,7 @@
               ? 'Plain-English Equipment & Lane-Play Q&A'
               : 'Lane Transition Strategy & Arsenal Gap Audit',
             plan: "We'll evaluate your current equipment on Forest Hill Lanes, explain how coverstocks and surface grit shape ball motion, and coordinate directly with Doc's Pro Shop so every ball in your bag has a clear job.",
-            meta: '<strong>Estimated Scope:</strong> 45–60 minutes &middot; $60 / session, plus the lane fee at Forest Hill Lanes &middot; <strong>Coaching Match:</strong> Scott J. Kramer or Academy Staff'
+            meta: '<strong>Estimated Scope:</strong> 45–60 minutes &middot; $60 / session, plus the lane fee at Forest Hill Lanes &middot; <strong>Coach:</strong> Scott J. Kramer'
           };
         }
 
@@ -4027,7 +4010,7 @@
             plan: profile === 'senior'
               ? "We'll use slow-motion video to maximize smooth timing and effortless leverage—protecting your comfort while sharpening accuracy and pin carry through persistent, focused drills."
               : "Seeing your swing plane, timing, and release frame by frame removes guesswork. We'll isolate the 1–2 finer mechanical adjustments that unlock consistency and send you home with annotated clips.",
-            meta: '<strong>Estimated Scope:</strong> 60–75 minutes &middot; $75 / session, plus the lane fee at Forest Hill Lanes &middot; <strong>Coaching Match:</strong> Best Match / First Available Coach'
+            meta: '<strong>Estimated Scope:</strong> 60–75 minutes &middot; $75 / session, plus the lane fee at Forest Hill Lanes &middot; <strong>Coach:</strong> Scott J. Kramer'
           };
         }
 
@@ -4040,7 +4023,7 @@
           plan: goal === 'spares'
             ? "Picking up single-pin spares is the fastest, most reliable way to raise your average. With persistence and focus, we'll lock in a clean visual spare system and steady approach balance."
             : "No pressure and no jargon—we'll answer your questions on the lanes, examine your natural timing and release, and give you 1–2 practical drills you can groove at your own pace.",
-          meta: '<strong>Estimated Scope:</strong> 60 Minutes &middot; $60 / session, plus the lane fee at Forest Hill Lanes &middot; <strong>Coaching Match:</strong> Best Match / First Available Coach'
+          meta: '<strong>Estimated Scope:</strong> 60 Minutes &middot; $60 / session, plus the lane fee at Forest Hill Lanes &middot; <strong>Coach:</strong> Scott J. Kramer'
         };
       }
 
@@ -4091,7 +4074,7 @@
             ageGroup: profileToAgeGroup[selectedProfile],
             program: 'private lesson',
             sessionFocus: currentRec.sessionLabel,
-            preferredCoach: 'Best Match / First Available Coach',
+            preferredCoach: 'Scott J. Kramer (Founder & Lead Coach)',
             goals: noteText
           });
           showToast('Booking Pre-Filled', `Added your "${currentRec.sessionLabel}" focus details below.`);

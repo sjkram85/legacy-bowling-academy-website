@@ -60,13 +60,14 @@ Every request uses these fields:
 
 Each of these is marked on the page with "Placeholder — add the real details before relying on this page". Delete the note when the real fact is in the page.
 
-1. `placeholder-scott-certs` — any other public credential for Scott J. Kramer (more USBC levels, course names, the year coaching started, affiliations). Bronze, SafeSport, and USBC ID 988-6768 are already listed because they were already on the site.
-2. `placeholder-staff-mechanics` — name, certification, SafeSport status, and bio for the physical and mental game coach. No name is invented.
-3. `placeholder-staff-league` — the same, for the league, senior, and youth coach card.
-4. `placeholder-clinics` — next clinic or camp name, date, time, ages, group size, and price.
-5. `placeholder-youth` — youth program age range, season dates, meeting day and time, group size, and price. Do not reuse the $60 or $75 private-lesson rate as that price.
-6. `placeholder-program-prices` — clinic, camp, and youth-program prices in the Pay section. Delete this note when those prices are published.
-7. `endpoint-placeholder` — hides on its own once `ACADEMY_ENDPOINT` is a real https URL. You can also delete the paragraph.
-8. `pay-link-placeholder` — hides on its own once `PAYMENT_LINK` is a real https URL, along with the "coming soon" block.
+1. `placeholder-clinics` — next clinic or camp name, date, time, ages, group size, and price.
+2. `placeholder-youth` — youth program age range, season dates, meeting day and time, group size, and price. Do not reuse the $60 or $75 private-lesson rate as that price.
+3. `placeholder-program-prices` — clinic, camp, and youth-program prices in the Pay section. Delete this note when those prices are published.
+4. `endpoint-placeholder` — hides on its own once `ACADEMY_ENDPOINT` is a real https URL. You can also delete the paragraph.
+5. `pay-link-placeholder` — hides on its own once `PAYMENT_LINK` is a real https URL, along with the "coming soon" block.
 
 The two constants at the top of the script are the other blanks: the endpoint URL and the payment link.
+
+## Adding coaches as the roster expands
+
+Scott J. Kramer is currently listed as the sole coach, paired with an "Expanding Our Coaching Staff" card and inquiry button in `#staff`. When additional USBC-certified coaches join, add new `.coach-card` articles inside `.staff-grid` and add their names to the `#preferred-coach` select menu.
