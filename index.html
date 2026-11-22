@@ -1797,6 +1797,105 @@
     }
 
     /* =========================================================================
+       8B. SECTION // FACEBOOK & YOUTUBE (#social)
+       ========================================================================= */
+    .social-grid {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 820px) {
+      .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .social-card {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .social-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .social-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .social-icon-badge.facebook {
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--accent-sky);
+    }
+
+    .social-icon-badge.youtube {
+      background: rgba(244, 63, 94, 0.14);
+      border: 1px solid rgba(251, 113, 133, 0.35);
+      color: var(--accent-rose);
+    }
+
+    .social-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .social-card h3 {
+      font-size: 1.28rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--text-white);
+    }
+
+    .social-card p {
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      line-height: 1.66;
+    }
+
+    .social-card-actions {
+      margin-top: auto;
+      padding-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-soon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px dashed rgba(100, 116, 139, 0.55);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* =========================================================================
        9. SECTION // FAQ ACCORDION (Exact LCS Centered Stack)
        ========================================================================= */
     .faq-header-center {
@@ -3130,6 +3229,67 @@
     </section>
 
     <!-- ======================================================================
+         8B. SECTION // FOLLOW ON FACEBOOK & YOUTUBE (#social)
+         ====================================================================== -->
+    <section id="social" class="section section-border-top">
+      <div class="container">
+        <div class="eyebrow">FOLLOW &amp; WATCH</div>
+        <h2 class="section-heading">Facebook &amp; YouTube</h2>
+        <p class="section-lead">
+          Follow Legacy Bowling Academy for plain-English mechanics tips, spare-shooting drills, mental-game reminders, and academy updates from Forest Hill Lanes.
+        </p>
+
+        <div class="social-grid">
+          <!-- Facebook Card -->
+          <article class="cyber-panel cyber-panel-hover social-card">
+            <div class="social-card-top">
+              <div class="social-icon-badge facebook" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.5 21v-8.2h2.76l.41-3.2H13.5V7.56c0-.93.26-1.56 1.59-1.56h1.7V3.14c-.29-.04-1.3-.14-2.48-.14-2.45 0-4.13 1.5-4.13 4.24v2.36H7.4v3.2h2.78V21h3.32z"/>
+                </svg>
+              </div>
+              <span class="social-tag">Community &amp; Updates</span>
+            </div>
+            <h3>Legacy Bowling Academy on Facebook</h3>
+            <p>
+              Academy news, open lesson windows at Forest Hill Lanes, upcoming clinics or youth announcements, and quick lane-play tips between league nights.
+            </p>
+            <div class="social-card-actions">
+              <a id="facebook-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" hidden>
+                <span>Follow on Facebook</span>
+                <span aria-hidden="true">&nearr;</span>
+              </a>
+              <span id="facebook-soon" class="social-soon-pill">Facebook page link coming soon</span>
+            </div>
+          </article>
+
+          <!-- YouTube Card -->
+          <article class="cyber-panel cyber-panel-hover social-card">
+            <div class="social-card-top">
+              <div class="social-icon-badge youtube" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4L15.85 12 9.6 15.6z"/>
+                </svg>
+              </div>
+              <span class="social-tag">Drills &amp; Breakdowns</span>
+            </div>
+            <h3>Legacy Bowling Academy on YouTube</h3>
+            <p>
+              Plain-English mechanics breakdowns, spare-system walkthroughs, mental-game resets, and honest ball-reaction explanations you can take straight to practice.
+            </p>
+            <div class="social-card-actions">
+              <a id="youtube-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" hidden>
+                <span>Watch on YouTube</span>
+                <span aria-hidden="true">&nearr;</span>
+              </a>
+              <span id="youtube-soon" class="social-soon-pill">YouTube channel link coming soon</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
          9. SECTION 07 // POLICIES & ANSWERS FAQ (Exact LCS Centered Stack)
          ====================================================================== -->
     <section id="faq" class="section section-border-top">
@@ -3491,6 +3651,7 @@
             <a href="#about">Founder Philosophy</a>
             <a href="#staff">Meet Your Coach</a>
             <a href="#focus-check">Focus Finder</a>
+            <a href="#social">Facebook &amp; YouTube</a>
             <a href="#faq">FAQ</a>
             <a href="#pay">Book &amp; Pay</a>
             <a href="#contact">Contact</a>
@@ -3551,6 +3712,8 @@
          ==================================================================== */
       const ACADEMY_ENDPOINT = '';
       const PAYMENT_LINK = '';
+      const FACEBOOK_URL = '';
+      const YOUTUBE_URL = '';
 
       function configuredHttpsUrl(value) {
         const url = String(value || '').trim();
@@ -4203,6 +4366,31 @@
           if (payLive) payLive.hidden = true;
           if (paySoon) paySoon.hidden = false;
         }
+
+        const fbUrl = configuredHttpsUrl(FACEBOOK_URL);
+        const fbLink = document.getElementById('facebook-link');
+        const fbSoon = document.getElementById('facebook-soon');
+        if (fbUrl && fbLink && fbSoon) {
+          fbLink.href = fbUrl;
+          fbLink.hidden = false;
+          fbSoon.hidden = true;
+        } else {
+          if (fbLink) fbLink.hidden = true;
+          if (fbSoon) fbSoon.hidden = false;
+        }
+
+        const ytUrl = configuredHttpsUrl(YOUTUBE_URL);
+        const ytLink = document.getElementById('youtube-link');
+        const ytSoon = document.getElementById('youtube-soon');
+        if (ytUrl && ytLink && ytSoon) {
+          ytLink.href = ytUrl;
+          ytLink.hidden = false;
+          ytSoon.hidden = true;
+        } else {
+          if (ytLink) ytLink.hidden = true;
+          if (ytSoon) ytSoon.hidden = false;
+        }
+
         refreshSubmitLabel();
       }
 

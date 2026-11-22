@@ -11,9 +11,11 @@ Open `index.html` and find the academy desk config at the top of the page script
 ```js
 const ACADEMY_ENDPOINT = '';
 const PAYMENT_LINK = '';
+const FACEBOOK_URL = '';
+const YOUTUBE_URL = '';
 ```
 
-Paste each URL between the quotes. Leave a value blank until it exists. A blank value is honest: the page will not pretend a booking or a payment went through.
+Paste each URL between the quotes. Leave a value blank until it exists. A blank value is honest: the page will not pretend a booking or a payment went through, and Facebook / YouTube cards show a "coming soon" pill until their full `https://` URLs are added.
 
 Both values must be full `https://` URLs. Anything else is treated as blank.
 
