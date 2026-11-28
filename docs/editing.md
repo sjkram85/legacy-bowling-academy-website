@@ -4,15 +4,15 @@ This repository is the public website only. Admin, billing, and customer records
 
 Links in `index.html` stay relative so the GitHub Pages project path keeps working. Do not add a CNAME file until the custom domain is ready.
 
-## Where to paste the two URLs
+## Where to paste the URLs
 
 Open `index.html` and find the academy desk config at the top of the page script:
 
 ```js
-const ACADEMY_ENDPOINT = '';
-const PAYMENT_LINK = '';
-const FACEBOOK_URL = '';
-const YOUTUBE_URL = '';
+const ACADEMY_ENDPOINT = 'https://legacy-control-center-api.legacycomputing.workers.dev/api/public/academy';
+const PAYMENT_LINK = 'https://venmo.com/u/LegacyBrands';
+const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61596557673263';
+const YOUTUBE_URL = 'https://www.youtube.com/@LegacyBowlingAcademy';
 ```
 
 Paste each URL between the quotes. Leave a value blank until it exists. A blank value is honest: the page will not pretend a booking or a payment went through, and Facebook / YouTube cards show a "coming soon" pill until their full `https://` URLs are added.
@@ -21,19 +21,17 @@ Both values must be full `https://` URLs. Anything else is treated as blank.
 
 ### Booking and inquiry endpoint
 
-`ACADEMY_ENDPOINT` is the deployed Google Apps Script web app URL (the `/exec` link), once that app exists in the portal project.
+`ACADEMY_ENDPOINT` currently points to the Cloudflare Worker endpoint (`https://legacy-control-center-api.legacycomputing.workers.dev/api/public/academy`) backed by Cloudflare D1 (`Academy → Requests` in the Control Center).
 
-The form sends a `application/x-www-form-urlencoded` POST with `fetch` and `mode: 'no-cors'`, which a public Apps Script web app can accept. The browser cannot read the script's reply. A success message means the browser handed the request off, not that a receipt came back. Confirm a test submission in the portal.
+The form sends a JSON `POST` request with real CORS and shows a verified confirmation reference ID (`{ ok: true, id }`) once saved. Legacy Google Apps Script `/exec` URLs are also still supported automatically via `no-cors` form POST if `ACADEMY_ENDPOINT` is ever switched to `script.google.com`.
 
-While `ACADEMY_ENDPOINT` is blank, Book a lesson and Send an inquiry only prepare an email to info@legacybowlingacademy.com. The visitor has to send it. The on-page placeholder hides itself after a real https URL is saved.
-
-Suggested Apps Script `doPost` reads `e.parameter` for the fields below. Deploy the web app so it runs as the script owner and is available to anyone, including anonymous visitors. The script itself does not belong in this repo.
+While `ACADEMY_ENDPOINT` is blank, Book a lesson and Send an inquiry prepare a pre-filled email to info@legacybowlingacademy.com. The visitor has to send it.
 
 ### Payment link
 
-`PAYMENT_LINK` is a Legacy Computing Services, LLC payment URL. Legacy Bowling Academy is a DBA of that company. It does not have its own bank account or merchant account. Paste the LCS payment link here. Do not paste a link that would make the academy look like it takes payment on its own.
+`PAYMENT_LINK` currently points to the Venmo Business account `@LegacyBrands` (`https://venmo.com/u/LegacyBrands`), which operates under Legacy Computing Services, LLC. Legacy Bowling Academy is a DBA of that company and does not have its own bank account or merchant account. Venmo Business is currently the sole accepted payment method until additional payment options are set up.
 
-While it is blank, the Pay section says online payment is coming soon and does not link out. When it is an https URL, that block is replaced by a button that opens the Legacy Computing Services payment page in a new tab. This site never collects card numbers.
+While `PAYMENT_LINK` is blank, the Pay section shows a "Book a time first" fallback and does not link out. When it is an https URL, `#pay-live` displays the Venmo Business button that opens `PAYMENT_LINK` in a new tab. This site never collects card numbers.
 
 Do not add prices that are not already published in the Sessions section. Private lessons on the page today are $60 or $75 a session, plus lane lineage paid at Forest Hill Lanes. Clinic, camp, and youth-program prices are not published.
 
@@ -58,17 +56,14 @@ Every request uses these fields:
 
 `website` is a hidden honeypot, not a real question. Leave that field in the form.
 
-## Placeholders to replace
+## Remaining items to update when ready
 
-Each of these is marked on the page with "Placeholder — add the real details before relying on this page". Delete the note when the real fact is in the page.
+All visible public placeholder banners have been removed from `index.html`. Update these items in `index.html` when ready:
 
-1. `placeholder-clinics` — next clinic or camp name, date, time, ages, group size, and price.
-2. `placeholder-youth` — youth program age range, season dates, meeting day and time, group size, and price. Do not reuse the $60 or $75 private-lesson rate as that price.
-3. `placeholder-program-prices` — clinic, camp, and youth-program prices in the Pay section. Delete this note when those prices are published.
-4. `endpoint-placeholder` — hides on its own once `ACADEMY_ENDPOINT` is a real https URL. You can also delete the paragraph.
-5. `pay-link-placeholder` — hides on its own once `PAYMENT_LINK` is a real https URL, along with the "coming soon" block.
-
-The two constants at the top of the script are the other blanks: the endpoint URL and the payment link.
+1. `ACADEMY_ENDPOINT` — paste the Google Apps Script `/exec` URL at the top of `<script>` to enable direct form submission instead of the email-prep flow.
+2. `#clinics` and `#youth` — replace the interest-list copy with real dates, times, age ranges, group sizes, and pricing once scheduled (do not reuse the $60 or $75 private-lesson rate for group programs).
+3. `#testimonials` — currently commented out in `index.html`; uncomment and populate once 2–3 real bowler stories are ready to publish.
+4. `#pay` / `PAYMENT_LINK` — update when additional payment options beyond Venmo Business (`@LegacyBrands`) are ready.
 
 ## Adding coaches as the roster expands
 
